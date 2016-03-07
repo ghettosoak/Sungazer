@@ -1,0 +1,63 @@
+<div class="shortcuts">
+	<ul>
+		<li>
+			<p>
+				goto line
+				<span>
+					<i>ctrl</i> + <i>g</i>
+				</span>
+			</p>
+		</li>
+	</ul>
+
+	<ul>
+		<li>
+			<p>
+				destroy pane
+				<span class="directed">
+					<i>cmd</i> + <i>k</i> // 
+					<i>shift</i> + <i>cmd</i> + <i class="direction direction_all"></i>
+				</span>
+			</p>
+		</li>
+	</ul>
+
+	<ul>
+		<li>
+			<p>
+				quick find all
+				<span>
+					<i>ctrl</i> + <i>cmd</i> + <i>g</i>
+				</span>
+			</p>
+		</li>
+		<li>
+			<p>
+				quick find next
+				<span>
+					<i>cmd</i> + <i>g</i>
+				</span>
+			</p>
+		</li>
+	</ul>
+
+	<ul>
+		<li>
+			<p>
+				in/decrement by 1
+				<span class="directed">
+					<i>option</i> + <i class="direction direction_updown"></i>
+				</span>
+			</p>
+		</li>
+		<li>
+			<p>
+				in/decrement by 10
+				<span class="directed">
+					<i>option</i> + <i>cmd</i> + <i class="direction direction_updown"></i>
+				</span>
+			</p>
+		</li>
+	</ul>
+
+</div>

@@ -1,0 +1,57 @@
+.calendar{
+	width: 300px;
+	height: 250px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -129px; 
+	padding: 10px;
+
+	.clndr-control-button{
+		display: none;
+	}
+
+	.month{
+		text-align: center;
+		font-size: 25px;
+	}
+
+	table{
+		width: 100%;
+		font-size: 20px;
+		line-height: 30px;
+
+		.header-days{
+			border-bottom: 1px solid white;
+
+			.header-day{
+				text-align: center;
+			}
+		}
+
+		.adjacent-month{
+			opacity: .5;
+		}
+
+		.day{
+			text-align: center;
+
+			.day-contents{
+				width: 30px;
+				margin: 0 auto;
+				position: relative;
+			}
+		}
+
+		.today .day-contents{
+			background-color: white;
+			border-radius: 50px;
+			color: white;
+			// .transition(all .25s ease);
+
+			.ready &{
+				color: rgb(31, 37, 98);
+			}
+		}
+	}
+}

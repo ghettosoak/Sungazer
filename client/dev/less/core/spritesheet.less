@@ -1,0 +1,16 @@
+.icon(@x, @y, @size){
+	background-image: url(../img/spritesheet.png);
+	background-position: -(@x * @size) -(@y * @size);
+	background-size: (@size * 240) / 40px;
+	background-repeat: no-repeat;
+	overflow: hidden; 
+
+	.pressing &{
+		// background-image: url(../img/spritesheet_dark.png); 
+		background-position: -((@x * @size) + (3 * @size)) -(@y * @size) !important; 
+	}
+
+	.pressing&{
+		background-position: -((@x * @size) + (3 * @size)) -(@y * @size) !important; 
+	}
+}

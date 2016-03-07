@@ -1,0 +1,53 @@
+<!doctype html>
+<!--[if lte IE 8]>     <html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE]>       <html class="ie" lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html class="not_ie" lang="en"> <!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>SUNGAZER</title>
+
+    <!-- <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" /> -->
+
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+
+    <script>
+        document.addEventListener("touchstart", function() {},false);
+    </script>
+</head>
+
+<body>
+
+	<div class="background">
+		<iframe class="bg0 active"></iframe>
+		<iframe class="bg1"></iframe>
+	</div>
+
+
+	<div class="main">
+
+		<!--#include file="assets/inc/clock.shtml" -->
+		<!--#include file="assets/inc/calendar.shtml" -->
+		<!--#include file="assets/inc/quote.shtml" -->
+		<!--#include file="assets/inc/weather.shtml" -->
+		<!--#include file="assets/inc/news.shtml" -->
+		<!--#include file="assets/inc/shortcuts.shtml" -->
+		<!--#include file="assets/inc/music.shtml" -->
+		<!--#include file="assets/inc/stats.shtml" -->
+		<!--#include file="assets/inc/links.shtml" -->
+
+		<audio id="link">
+			<source src="assets/sound/click.wav"></source>
+		</audio>
+	</div>
+
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/vendor/clndr.min.js"></script>
+<!-- <script type="text/javascript" src="cordova.js"></script> -->
+
+</body>
+
+</html>

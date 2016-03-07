@@ -1,0 +1,268 @@
+
+<!doctype html>
+<!--[if lte IE 8]>     <html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE]>       <html class="ie" lang="en"> <![endif]-->
+<!--[if !IE]><!--> <html class="not_ie" lang="en"> <!--<![endif]-->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>SUNGAZER</title>
+
+    <!-- <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" /> -->
+
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+</head>
+
+<body>
+
+	<div class="background">
+		<iframe class="bg0 active"></iframe>
+		<iframe class="bg1"></iframe>
+	</div>
+
+
+	<div class="main">
+
+		<div class="clock">
+	<div class="hours"></div>
+	<div class="minutes"></div>
+	<div class="seconds"></div>
+
+	<div class="hashes">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	<audio id="clock_tick">
+		<source src="assets/sound/tick.mp3"></source>
+	</audio>
+</div>
+		<div class="calendar">
+	
+</div>
+		<div class="quote smallish">
+	<a href="http://quotesondesign.com/?p=1911"><p>It's extremely difficult to be simultaneously concerned with the end-user experience of whatever it is that you're building and the architecture of the program that delivers that experience.</p><span>— James Hague</span></a>
+</div>
+		<div class="weather">
+	<div class="city brn">
+		<p class="title">BRN</p>
+		<p class="icon" data-weather="" data-planetary=""></p>
+		<p class="temp"></p>
+		<ul class="threeday">
+			<li><p class="day">Th</p><p class="icon" data-weather="500" data-planetary="day"></p><p class="temp"><span>0</span> / <span>0</span></p></li><li><p class="day">Fr</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li><li><p class="day">Sa</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li>
+		</ul>
+	</div>
+	<div class="city chi">
+		<p class="title">chi</p>
+		<p class="icon" data-weather="" data-planetary=""></p>
+		<p class="temp"></p>
+		<ul class="threeday">
+			<li><p class="day">Th</p><p class="icon" data-weather="500" data-planetary="day"></p><p class="temp"><span>0</span> / <span>0</span></p></li><li><p class="day">Fr</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li><li><p class="day">Sa</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li>
+		</ul>
+	</div>
+</div>
+		<div class="news">
+	<div class="source nyt">
+	</div>
+	<div class="source hackernews">
+	</div>
+</div>
+		<div class="shortcuts">
+	<ul>
+		<li>
+			<p>
+				goto line
+				<span>
+					<i>ctrl</i> + <i>g</i>
+				</span>
+			</p>
+		</li>
+	</ul>
+
+	<ul>
+		<li>
+			<p>
+				destroy pane
+				<span class="directed">
+					<i>cmd</i> + <i>k</i> // 
+					<i>shift</i> + <i>cmd</i> + <i class="direction direction_all"></i>
+				</span>
+			</p>
+		</li>
+	</ul>
+
+	<ul>
+		<li>
+			<p>
+				quick find all
+				<span>
+					<i>ctrl</i> + <i>cmd</i> + <i>g</i>
+				</span>
+			</p>
+		</li>
+		<li>
+			<p>
+				quick find next
+				<span>
+					<i>cmd</i> + <i>g</i>
+				</span>
+			</p>
+		</li>
+	</ul>
+
+	<ul>
+		<li>
+			<p>
+				in/decrement by 1
+				<span class="directed">
+					<i>option</i> + <i class="direction direction_updown"></i>
+				</span>
+			</p>
+		</li>
+		<li>
+			<p>
+				in/decrement by 10
+				<span class="directed">
+					<i>option</i> + <i>cmd</i> + <i class="direction direction_updown"></i>
+				</span>
+			</p>
+		</li>
+	</ul>
+
+</div>
+		<div class="music">
+	<div class="up"></div>
+	<div class="down"></div>
+	<div class="playpause" data-playing="true"></div>
+</div>
+		<div class="stats">
+	<div class="stat 1min">
+		<p>1min</p>
+		<div class="pie"></div>
+	</div>
+	<div class="stat 5min">
+		<p>5min</p>
+		<div class="pie"></div>
+	</div>
+	<div class="stat 15min">
+		<p>15min</p>
+		<div class="pie"></div>
+	</div>
+	<div class="stat memory">
+		<p>memory</p>
+		<div class="pie"></div>
+	</div>
+	<p class="uptime"></p>
+</div>
+		<div class="links">
+	<a href="http://lickth.is">
+		<span class="icon-lick"></span>
+		lick
+	</a>
+	<a href="http://inter.ject.ch/#/time/User">
+		<span class="icon-playpause"></span>
+		inter.ject
+	</a>
+	<a href="http://ab.ject.ch">
+		<span class="icon-binoculars"></span>
+		ab.ject
+	</a>
+	<a href="https://docs.google.com/spreadsheets/u/0/">
+		<span class="icon-gdrive"></span>
+		google docs
+	</a>
+	<a href="https://feedly.com/i/my">
+		<span class="icon-feedly"></span>
+		feedly
+	</a>
+	<a href="http://read.ject.ch/">
+		<span class="icon-pfuuse"></span>
+		pfuuse
+	</a>
+	<a href="https://www.firebase.com/account/#/">
+		<span class="icon-firebase"></span>
+		firebase
+	</a>
+	<a href="https://itunesconnect.apple.com">
+		<span class="icon-apple"></span>
+		itunes connect
+	</a>
+	<a href="https://fortawesome.github.io/Font-Awesome/cheatsheet/">
+		<span class="icon-flag"></span>
+		font awesome
+	</a>
+</div>
+
+		<audio id="link">
+			<source src="assets/sound/click.wav"></source>
+		</audio>
+	</div>
+
+<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="assets/js/vendor/clndr.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+
+</body>
+
+</html>

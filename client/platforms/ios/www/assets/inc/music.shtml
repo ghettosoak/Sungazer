@@ -1,0 +1,5 @@
+<div class="music">
+	<div class="up"></div>
+	<div class="down"></div>
+	<div class="playpause" data-playing="true"></div>
+</div>

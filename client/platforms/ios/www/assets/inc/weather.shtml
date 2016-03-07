@@ -1,0 +1,18 @@
+<div class="weather">
+	<div class="city brn">
+		<p class="title">BRN</p>
+		<p class="icon" data-weather="" data-planetary=""></p>
+		<p class="temp"></p>
+		<ul class="threeday">
+			<li><p class="day">Th</p><p class="icon" data-weather="500" data-planetary="day"></p><p class="temp"><span>0</span> / <span>0</span></p></li><li><p class="day">Fr</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li><li><p class="day">Sa</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li>
+		</ul>
+	</div>
+	<div class="city chi">
+		<p class="title">chi</p>
+		<p class="icon" data-weather="" data-planetary=""></p>
+		<p class="temp"></p>
+		<ul class="threeday">
+			<li><p class="day">Th</p><p class="icon" data-weather="500" data-planetary="day"></p><p class="temp"><span>0</span> / <span>0</span></p></li><li><p class="day">Fr</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li><li><p class="day">Sa</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li>
+		</ul>
+	</div>
+</div>

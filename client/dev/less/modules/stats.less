@@ -1,0 +1,61 @@
+.stats{
+	position: absolute;
+	width: 132px;
+	height: 508px;
+	bottom: 0;
+	left: 50%;
+	margin-left: 41px;
+
+	.stat{
+		width: 100%;
+		float: left;
+		padding: 10px 0;
+		.pie{
+			height: 80px;
+			width: 80px;
+			position: relative;
+			margin: 0 auto;
+			border: 1px solid white;
+			border-radius: 80px;
+			overflow: hidden;
+			transform: translateZ(0);
+
+			svg{
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				overflow: hidden;
+			}
+		}
+
+		p{
+			text-align: center;
+			display: block;
+			width: 100%;
+			margin: 0;
+			color: white;
+		}
+	}
+
+	.uptime{
+		position: absolute;
+		color: white;
+		text-align: center;
+		top: 481px;
+		width: 100%;
+		margin: 0;
+	}
+
+	
+}
+
+
+.digitalocean_link{
+	width: 60px;
+	height: 60px;
+	display: block;
+	margin: auto;
+	.icon(1, 4, 60px);
+}

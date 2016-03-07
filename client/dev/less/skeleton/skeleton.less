@@ -1,0 +1,163 @@
+html,
+body{
+	height:100%;
+	position: relative;
+	background-color: white;
+	color: @color-copy;
+	font-family: @standard;
+	font-weight: @light;
+	font-size: @base-font-size;
+	line-height: @base-line-height;	
+}
+
+body{
+	width: 100%;
+	padding: 5px;
+}
+
+.main{
+	width: 100%;
+	position: relative;
+	min-height: 100%;
+	z-index: 2;
+	color: white;
+
+	& > div{
+		border: 1px solid white;
+	}
+}
+
+a{
+	text-decoration: none !important;
+
+	&:hover, &:active{
+		text-decoration: none !important;
+	}
+}
+
+.block_link{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	color: white;
+
+	*{
+		color: white;
+	}
+
+	&:hover, &:active{
+		text-decoration: none;
+		background-color: white;
+
+		*{
+			color: @color-press;
+		}
+	}
+}
+
+.press, a{
+	.transition(~'background-color @{transitionSettings}, color @{transitionSettings}, top @{transitionSettings}, opacity @{transitionSettings}, visibility @{transitionSettings}');
+
+	*{
+		.transition(~'background-color @{transitionSettings}, color @{transitionSettings}, top @{transitionSettings}, opacity @{transitionSettings}, visibility @{transitionSettings}');
+	}
+}
+
+.pressing {
+	background-color: white !important;
+	color: @color-press !important;
+	
+	*{
+		color: @color-press !important;
+	}
+}
+
+.pressing.flash{
+	color: white !important;
+}
+
+.flasher{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: -1;
+	background-color: white !important;
+
+	display: table;
+
+	p{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		color: @color-press !important;
+	}
+
+	.pressing &{
+		visibility: visible;
+		opacity: 1;
+		z-index: 2;
+	}
+}
+
+.searcher{
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	position: relative;
+	margin: 0 10px 0 0;
+	top: 4px;
+
+	.icon(1, 0, 25px);
+}
+
+
+.movingAbout{
+	top: 0px;
+	// height: 100%;
+	position: relative;
+	opacity: 1;
+	visibility: visible;
+}
+
+.entering{
+	top: 10px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+
+.leaving{
+	top: 10px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

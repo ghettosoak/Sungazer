@@ -1,0 +1,41 @@
+.background{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	&:before{
+		content:'';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background-color: rgba(0,0,0,.4);
+	}
+
+	iframe{
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		border: 0;
+		opacity: 0;
+		visibility: hidden;
+		.transition(all 1s ease);
+
+		&.active{
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.first &{
+			.transition(all .25s ease);
+		}
+	}
+}

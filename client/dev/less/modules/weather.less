@@ -1,0 +1,194 @@
+.weather{
+	position: absolute;
+	width: 306px;
+    height: 251px;
+    top: 0;
+    left: 50%;
+    margin-left: -133px;
+
+	.city{
+		width: 50%;
+		position: relative;
+		float: left;
+		font-size: 40px;
+		line-height: 40px;
+		text-align: center;
+		padding: 10px;
+		height: 100%;
+
+		.brn{
+			border-right: 1px solid white;
+		}
+
+		.icon{
+			font-family: @weather;
+		}
+
+		.temp{
+			position: absolute;
+			top: 110px;
+			width: ~'calc(100% - 20px)';
+			left: 10px;
+
+
+			&:after{
+				content: '';
+				position: absolute;
+				top: 5px;
+				height: 7px;
+				width: 7px;
+				border: 1px solid white;
+				border-radius: 10px;
+			}
+		}
+
+		.threeday{
+			position: absolute;
+			bottom: 0;
+			width: ~'calc(100% - 20px)';
+			left: 10px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-size: 20px;
+			line-height: 20px;
+
+			li{
+				width: 33.3333%;
+				position: relative;
+				float: left;
+				margin: 0;
+				padding: 0;
+			}
+
+			.threeday_temp:after{
+				content: none;
+			}
+		}
+
+	}
+
+
+	.icon[data-planetary="day"][data-weather="200"]:before,
+	.icon[data-planetary="day"][data-weather="201"]:before,
+	.icon[data-planetary="day"][data-weather="202"]:before,
+	.icon[data-planetary="day"][data-weather="210"]:before,
+	.icon[data-planetary="day"][data-weather="211"]:before,
+	.icon[data-planetary="day"][data-weather="212"]:before,
+	.icon[data-planetary="day"][data-weather="221"]:before,
+	.icon[data-planetary="day"][data-weather="230"]:before,
+	.icon[data-planetary="day"][data-weather="231"]:before,
+	.icon[data-planetary="day"][data-weather="232"]:before{content:"\f00e";}
+
+	.icon[data-planetary="day"][data-weather="300"]:before,
+	.icon[data-planetary="day"][data-weather="301"]:before,
+	.icon[data-planetary="day"][data-weather="302"]:before,
+	.icon[data-planetary="day"][data-weather="310"]:before,
+	.icon[data-planetary="day"][data-weather="311"]:before,
+	.icon[data-planetary="day"][data-weather="312"]:before,
+	.icon[data-planetary="day"][data-weather="321"]:before{content:"\f00b";}
+
+	.icon[data-planetary="day"][data-weather="500"]:before,
+	.icon[data-planetary="day"][data-weather="501"]:before,
+	.icon[data-planetary="day"][data-weather="502"]:before,
+	.icon[data-planetary="day"][data-weather="503"]:before,
+	.icon[data-planetary="day"][data-weather="504"]:before,
+	.icon[data-planetary="day"][data-weather="511"]:before,
+	.icon[data-planetary="day"][data-weather="520"]:before,
+	.icon[data-planetary="day"][data-weather="521"]:before,
+	.icon[data-planetary="day"][data-weather="522"]:before,
+	.icon[data-planetary="day"][data-weather="531"]:before{content:"\f009";}
+
+	.icon[data-planetary="day"][data-weather="600"]:before,
+	.icon[data-planetary="day"][data-weather="601"]:before,
+	.icon[data-planetary="day"][data-weather="602"]:before,
+	.icon[data-planetary="day"][data-weather="611"]:before,
+	.icon[data-planetary="day"][data-weather="612"]:before,
+	.icon[data-planetary="day"][data-weather="615"]:before,
+	.icon[data-planetary="day"][data-weather="616"]:before,
+	.icon[data-planetary="day"][data-weather="620"]:before,
+	.icon[data-planetary="day"][data-weather="621"]:before,
+	.icon[data-planetary="day"][data-weather="622"]:before{content:"\f00a";}
+
+	.icon[data-planetary="day"][data-weather="701"]:before,
+	.icon[data-planetary="day"][data-weather="711"]:before,
+	.icon[data-planetary="day"][data-weather="721"]:before,
+	.icon[data-planetary="day"][data-weather="731"]:before,
+	.icon[data-planetary="day"][data-weather="741"]:before{content:"\f003";}
+
+	.icon[data-planetary="day"][data-weather="800"]:before{content:"\f00d";}
+	.icon[data-planetary="day"][data-weather="801"]:before{content:"\f002";}
+	.icon[data-planetary="day"][data-weather="802"]:before{content:"\f002";}
+	.icon[data-planetary="day"][data-weather="803"]:before{content:"\f002";}
+	.icon[data-planetary="day"][data-weather="804"]:before{content:"\f013";}
+
+	.icon[data-planetary="day"][data-weather="900"]:before{content:"\f056";}
+	.icon[data-planetary="day"][data-weather="901"]:before{content:"\f050";}
+	.icon[data-planetary="day"][data-weather="902"]:before{content:"\f050";}
+	.icon[data-planetary="day"][data-weather="903"]:before{content:"\f053";}
+	.icon[data-planetary="day"][data-weather="904"]:before{content:"\f055";}
+	.icon[data-planetary="day"][data-weather="905"]:before{content:"\f021";}
+	.icon[data-planetary="day"][data-weather="906"]:before{content:"\f01d";}
+
+
+	.icon[data-planetary="night"][data-weather="200"]:before,
+	.icon[data-planetary="night"][data-weather="201"]:before,
+	.icon[data-planetary="night"][data-weather="202"]:before,
+	.icon[data-planetary="night"][data-weather="210"]:before,
+	.icon[data-planetary="night"][data-weather="211"]:before,
+	.icon[data-planetary="night"][data-weather="212"]:before,
+	.icon[data-planetary="night"][data-weather="221"]:before,
+	.icon[data-planetary="night"][data-weather="230"]:before,
+	.icon[data-planetary="night"][data-weather="231"]:before,
+	.icon[data-planetary="night"][data-weather="232"]:before{content:"\f02c";}
+
+	.icon[data-planetary="night"][data-weather="300"]:before,
+	.icon[data-planetary="night"][data-weather="301"]:before,
+	.icon[data-planetary="night"][data-weather="302"]:before,
+	.icon[data-planetary="night"][data-weather="310"]:before,
+	.icon[data-planetary="night"][data-weather="311"]:before,
+	.icon[data-planetary="night"][data-weather="312"]:before,
+	.icon[data-planetary="night"][data-weather="321"]:before{content:"\f039";}
+
+	.icon[data-planetary="night"][data-weather="500"]:before,
+	.icon[data-planetary="night"][data-weather="501"]:before,
+	.icon[data-planetary="night"][data-weather="502"]:before,
+	.icon[data-planetary="night"][data-weather="503"]:before,
+	.icon[data-planetary="night"][data-weather="504"]:before,
+	.icon[data-planetary="night"][data-weather="511"]:before,
+	.icon[data-planetary="night"][data-weather="520"]:before,
+	.icon[data-planetary="night"][data-weather="521"]:before,
+	.icon[data-planetary="night"][data-weather="522"]:before,
+	.icon[data-planetary="night"][data-weather="531"]:before{content:"\f037";}
+
+	.icon[data-planetary="night"][data-weather="600"]:before,
+	.icon[data-planetary="night"][data-weather="601"]:before,
+	.icon[data-planetary="night"][data-weather="602"]:before,
+	.icon[data-planetary="night"][data-weather="611"]:before,
+	.icon[data-planetary="night"][data-weather="612"]:before,
+	.icon[data-planetary="night"][data-weather="615"]:before,
+	.icon[data-planetary="night"][data-weather="616"]:before,
+	.icon[data-planetary="night"][data-weather="620"]:before,
+	.icon[data-planetary="night"][data-weather="621"]:before,
+	.icon[data-planetary="night"][data-weather="622"]:before{content:"\f038";}
+
+	.icon[data-planetary="night"][data-weather="701"]:before,
+	.icon[data-planetary="night"][data-weather="711"]:before,
+	.icon[data-planetary="night"][data-weather="721"]:before,
+	.icon[data-planetary="night"][data-weather="731"]:before,
+	.icon[data-planetary="night"][data-weather="741"]:before{content:"\f04a";}
+
+	.icon[data-planetary="night"][data-weather="800"]:before{content:"\f02e";}
+	.icon[data-planetary="night"][data-weather="801"]:before{content:"\f031";}
+	.icon[data-planetary="night"][data-weather="802"]:before{content:"\f031";}
+	.icon[data-planetary="night"][data-weather="803"]:before{content:"\f031";}
+	.icon[data-planetary="night"][data-weather="804"]:before{content:"\f013";}
+
+	.icon[data-planetary="night"][data-weather="900"]:before{content:"\f056";}
+	.icon[data-planetary="night"][data-weather="901"]:before{content:"\f050";}
+	.icon[data-planetary="night"][data-weather="902"]:before{content:"\f050";}
+	.icon[data-planetary="night"][data-weather="903"]:before{content:"\f053";}
+	.icon[data-planetary="night"][data-weather="904"]:before{content:"\f055";}
+	.icon[data-planetary="night"][data-weather="905"]:before{content:"\f021";}
+	.icon[data-planetary="night"][data-weather="906"]:before{content:"\f01d";}
+}

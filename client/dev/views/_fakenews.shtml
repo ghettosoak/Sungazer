@@ -1,0 +1,12 @@
+<div class="news">
+	<div class="source google">
+		<a href="http://www.cbsnews.com/videos/belgian-police-arrest-16-brussels-on-lockdown/">Belgian police arrest 16, Brussels on lockdown</a>
+		<a href="http://www.nbcnews.com/meet-the-press/first-read-donald-trump-post-truth-2016-candidate-n468111">First Read: Donald Trump, The Post-Truth 2016 Candidate</a>
+		<a href="http://www.bbc.co.uk/news/world-europe-34896883">Brussels lockdown: Belgian police arrest 16 in anti-terror raids</a>
+	</div>
+	<div class="source hackernews">
+		<a href="http://hashbang.gr/breaking-the-4th-wall-with-minecraft/">Breaking the fourth wall with Minecraft</a>
+		<a href="https://www.washingtonpost.com/news/federal-eye/wp/2015/11/23/nasa-not-ready-for-dangers-of-deep-space-auditors-say/">NASA not ready for dangers of deep space, auditors say</a>
+		<a href="http://betamode.de/2015/11/23/what-happens-if-your-wordpress-is-hacked/">How botnets are created with hijacked Worpess, fake Flash downloads and Node.js</a>
+	</div>
+</div>

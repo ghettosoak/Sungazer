@@ -1,0 +1,38 @@
+<div class="links">
+	<a class="" href="http://inter.ject.ch/#/time/User">
+		<span class="icon-playpause"></span>
+		inter.ject
+	</a>
+	<a class="" href="http://ab.ject.ch">
+		<span class="icon-binoculars"></span>
+		ab.ject
+	</a>
+	<a class="" href="https://docs.google.com/spreadsheets/u/0/">
+		<span class="icon-gdrive"></span>
+		google docs
+	</a>
+	<a class="" href="https://www.youtube.com/">
+		<span class="icon-youtube"></span>
+		youtube
+	</a>
+	<a class="" href="https://www.quora.com/">
+		<span class="icon-quora"></span>
+		quora
+	</a>
+	<a class="" href="http://stackexchange.com/">
+		<span class="icon-stackexchange"></span>
+		stack exchange
+	</a>
+	<a class="" href="https://www.firebase.com/account/#/">
+		<span class="icon-firebase"></span>
+		firebase
+	</a>
+	<a class="" href="https://itunesconnect.apple.com">
+		<span class="icon-apple"></span>
+		itunes connect
+	</a>
+	<a class="" href="https://fortawesome.github.io/Font-Awesome/cheatsheet/">
+		<span class="icon-flag"></span>
+		font awesome
+	</a>
+</div>

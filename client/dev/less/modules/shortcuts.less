@@ -1,0 +1,61 @@
+.shortcuts{
+	position: absolute;
+	width: 380px;
+	height: 259px;
+	bottom: 0;
+	left: 0;
+	font-size: 25px;
+	padding: 15px 10px 10px;
+
+	ul{
+		margin: 5px 0 0;
+		padding: 0;
+		li{
+			list-style: none;
+			overflow: hidden;
+			padding-bottom: 5px;
+		}
+	}
+
+	p{
+		margin: 5px 0 0;
+		position: relative;
+		float: left;
+		width: 100%;
+
+		span{
+			float: right;
+			position: relative;
+
+			&.directed{
+				top: -8px;
+			}
+		}
+	}
+
+	i{
+		font-style: normal;
+		padding: 3px; 
+		border: 1px solid white;
+		border-radius: 5px;
+		// margin-top: -8px;
+	 //    display: inline;
+
+		&.direction{
+			width: 27px;
+			display: inline-block;
+			height: 26px;
+			position: relative;
+			bottom: -5px;
+			// margin-bottom: -5px;
+		}
+
+		&.direction_all{
+			.icon(0, 5, 25px);
+		}
+
+		&.direction_updown{
+			.icon(1, 5, 25px);
+		}
+	}
+}
