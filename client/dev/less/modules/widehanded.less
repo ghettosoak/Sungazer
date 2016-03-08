@@ -1,0 +1,60 @@
+.widehanded{
+	width: 300px;
+	height: 508px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	// overflow: hidden;
+	padding: 10px;
+
+	@keywidth: 59px;
+	@keyheight: 87px;
+
+	.key, .bigkey{
+		border-radius: 5px;
+		width: @keywidth;
+		position: relative;
+		margin: 5px;
+		display: table;
+		background-color: white;
+		color: @color-focus;
+
+		span{
+			width: 100%;
+			text-align: center;
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 20px;
+		}
+	}
+
+	.row{
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		float: left;
+		margin: 0;
+	}
+
+	.key{
+		height: @keyheight;
+		float: left;
+	}
+
+	.bigkey{
+		height: (@keyheight * 2) + 10;
+		float: right;
+		margin-right: 7px;
+	}
+
+	.kp_5:before{
+		content: '';
+		position: absolute;
+		height: ~'calc(100% - 4px)';
+		width: ~'calc(100% - 4px)';
+		top: 2px;
+		left: 2px;
+		border: 1px @color-focus solid;
+		border-radius: 5px;
+	}
+}

@@ -1,28 +1,36 @@
 $(function($){
 	var appID = '0506d7fa7a100f05a8aeb2fcfbd81f73',
+
+		_tempCorrector = function(kelvin){
+			return Math.round(kelvin - 273.15);
+		}
+
 		getWeather = function(target, zip, city){
 
-			console.log('http://api.openweathermap.org/data/2.5/weather?q=' + zip + '&appid=' + appID)
-		
 		$.ajax({
 			url: 'http://api.openweathermap.org/data/2.5/weather?q=' + zip + '&appid=' + appID,
 		}).done(function(current_data) {
 
 			console.log(current_data)
 
-			var $city = $('.city.' + target)
+			var $city = $('.city.' + target);
 
-			$city;
-
-			$city.children('.temp, .icon').addClass('leaving');
+			// $city.children('.temp, .icon').addClass('leaving');
 
 			setTimeout(function(){
 				// $city
 
 					$city.children('.temp')
 						.removeClass('leaving')
-						.html( Math.round(current_data.main.temp - 273.15) )
-						.addClass('entering');
+							.children('.current')
+								.html( _tempCorrector(current_data.main.temp) )
+							.siblings('.hi-lo')
+								.attr({
+									'data-lo': _tempCorrector(current_data.main.temp_max),
+									'data-hi': _tempCorrector(current_data.main.temp_min) 
+								});
+
+					$city.children('.temp').addClass('entering');
 
 					if (current_data.dt > current_data.sys.sunrise && current_data.dt < current_data.sys.sunset) timeOfDay = 'day'
 						else timeOfDay = 'night';
@@ -80,8 +88,8 @@ $(function($){
 				'<p class="day">' + day.format('dddd').substring(0, 2) + '</p>' +
 				'<p class="icon" data-weather="' + data.weather[0].id + '" data-planetary="day"></p>' +
 				'<p class="threeday_temp">'+
-					'<span>' + Math.round(273.15 - data.main.temp_max) + '</span>/'+
-					'<span>' + Math.round(273.15 - data.main.temp_min) + '</span>'+
+					'<span>' + _tempCorrector(data.main.temp_max) + '</span>/'+
+					'<span>' + _tempCorrector(data.main.temp_min) + '</span>'+
 				'</p>' +
 			'</li>'
 		).appendTo('.city.' + target + ' .threeday');

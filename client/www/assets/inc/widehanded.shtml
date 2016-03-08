@@ -1,0 +1,107 @@
+<div class="widehanded">
+	<div class="row">
+		<div class="key numlock">
+			<span>
+				shift
+			</span>
+		</div>
+		<div class="key slash">
+			<span>
+				ctrl
+			</span>
+		</div>
+		<div class="key star">
+			<span>
+				option
+			</span>
+		</div>
+		<div class="key minus">
+			<span>
+				cmd
+			</span>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="key kp_7">
+			<span>
+				mission control
+			</span>
+		</div>
+		<div class="key kp_8">
+			<span>
+				desktop
+			</span>
+		</div>
+		<div class="key kp_9">
+			<span>
+				cmd + tab
+			</span>
+		</div>
+		
+		<div class="bigkey plus">
+			<span>
+				left<br />click
+			</span>
+		</div>
+
+		<div class="key kp_4">
+			<span>
+				paste
+			</span>
+		</div>
+		<div class="key kp_5">
+			<span>
+				copy
+			</span>
+		</div>
+		<div class="key kp_6">
+			<span>
+				cut
+			</span>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="key kp_1">
+			<span>
+				undo
+			</span>
+		</div>
+		<div class="key kp_2">
+			<span>
+				switch window
+			</span>
+		</div>
+		<div class="key kp_3">
+			<span>
+				enter
+			</span>
+		</div>
+		
+		<div class="bigkey enter">
+			<span>
+				right<br />click
+			</span>
+		</div>
+
+		<div class="key kp_0">
+			<span>
+				cmd + c
+			</span>
+		</div>
+		<div class="key backspace">
+			<span>
+				divvy
+			</span>
+		</div>
+		<div class="key dot">
+			<span>
+				comment
+			</span>
+		</div>
+
+	</div>
+	
+</div>

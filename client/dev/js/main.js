@@ -20,8 +20,8 @@ require('./modules/weather');
 require('./modules/news'); 
 require('./modules/stats'); 
 require('./modules/quote'); 
-require('./modules/calendar'); 
-require('./modules/music'); 
+// require('./modules/calendar'); 
+require('./modules/control'); 
 
 require('./modules/init');
 

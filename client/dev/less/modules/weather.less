@@ -10,37 +10,73 @@
 		width: 50%;
 		position: relative;
 		float: left;
-		font-size: 40px;
-		line-height: 40px;
 		text-align: center;
+		// font-size: 40px;
+		// line-height: 40px;
 		padding: 10px;
 		height: 100%;
 
-		.brn{
-			border-right: 1px solid white;
+		.title{
+			font-size: 25px;
+			line-height: 25px;
+			margin-bottom: 5px;
 		}
 
 		.icon{
 			font-family: @weather;
+			font-size: 55px;
+			line-height: 65px;
 		}
 
 		.temp{
 			position: absolute;
 			top: 110px;
+			margin: 0 auto;
+			font-size: 45px;
+			line-height: 45px;
 			width: ~'calc(100% - 20px)';
-			left: 10px;
 
-
-			&:after{
-				content: '';
+			.current, 
+			.hi-lo{
 				position: absolute;
-				top: 5px;
-				height: 7px;
-				width: 7px;
-				border: 1px solid white;
-				border-radius: 10px;
+				left: 50%;
+				display: block;
 			}
-		}
+
+			.current{
+				margin: 0 0 0 -40px;
+
+				&:after{
+					content: '';
+					position: absolute;
+					top: 5px;
+					height: 7px;
+					width: 7px;
+					border: 1px solid white;
+					border-radius: 10px;
+				}
+			}
+
+			.hi-lo{
+				font-size: 25px;
+				line-height: 15px;
+
+				&:before,
+				&:after{
+					position: relative;
+					display: block;
+				}
+
+				&:before{ 
+					content: attr(data-lo); 
+					margin: 8px 29px -10px 0;
+				}
+				&:after{ 
+					content: attr(data-hi); 
+					margin: -7px 0 0 22px;
+				}
+			}
+		}		
 
 		.threeday{
 			position: absolute;
@@ -50,20 +86,27 @@
 			margin: 0;
 			padding: 0;
 			list-style: none;
-			font-size: 20px;
-			line-height: 20px;
-
+			
 			li{
 				width: 33.3333%;
 				position: relative;
 				float: left;
 				margin: 0;
 				padding: 0;
+
+				font-size: 20px !important;
+				line-height: 20px;
+				
+				.icon{
+					font-size: 20px;
+					line-height: 20px;
+				}
+
+				.threeday_temp:after{
+					content: none;
+				}
 			}
 
-			.threeday_temp:after{
-				content: none;
-			}
 		}
 
 	}

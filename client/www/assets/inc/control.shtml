@@ -1,0 +1,13 @@
+<div class="control">
+	<h1 class="songtitle press" data-searching="Of Montreal">
+		Of Montreal – Wraith Pinned to the Mist and Other Games but a longer name
+	</h1>
+	
+	<!-- <div class="buttons"> -->
+		<div class="press noLink shareMouse" data-playing="true"></div>
+		<div class="press noLink dimScreens" data-playing="true"></div>
+		<div class="press noLink mute"></div>
+		<div class="press noLink playpause" data-playing="true"></div>
+		<div class="press noLink next" data-playing="true"></div>
+	<!-- </div> -->
+</div>

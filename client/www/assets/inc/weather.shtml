@@ -1,9 +1,12 @@
 <div class="weather">
 	<a class="block_link" href="http://weather.cod.edu/">
 		<div class="city brn">
-			<p class="title">BRN</p>
+			<p class="title movingAbout">BRN</p>
 			<p class="icon movingAbout" data-weather="" data-planetary=""></p>
-			<p class="temp movingAbout"></p>
+			<p class="temp movingAbout">
+				<span class="current"></span>
+				<span class="hi-lo" data-lo="" data-hi=""/>/</span>
+			</p>
 			<ul class="threeday">
 				<li>
 					<p class="day">Th</p>
@@ -24,9 +27,11 @@
 		<div class="city chi">
 			<p class="title movingAbout">chi</p>
 			<p class="icon movingAbout" data-weather="" data-planetary=""></p>
-			<p class="temp"></p>
+			<p class="temp movingAbout">
+				<span class="current"></span>
+				<span class="hi-lo" data-hi="" data-lo=""/>/</span>
+			</p>
 			<ul class="threeday">
-
 				<li>
 					<p class="day">Th</p> 
 					<p class="icon" data-weather="500" data-planetary="day"></p>

@@ -6,7 +6,7 @@ var itunes = require('playback'),
 	volumeFirst = true,
 	itunesFirst = true;
 
-firebaseRef.child('volume').on('value', function(data){
+firebaseRef.child('mute').on('value', function(data){
 	if (!volumeFirst){
 
 		loudness.setVolume(data.A.B, function (err) {
@@ -28,6 +28,25 @@ firebaseRef.child('playing').on('value', function(data){
 		}
 	}
 	itunesFirst = false;
+});
+
+firebaseRef.child('shareMouse').on('value', function(data){
+	if (data.A.B){
+		exec('killall ShareMouse');
+
+		setTimeout(function(){
+			exec('open -a ShareMouse');
+		}, 1500);
+	}
+});
+
+firebaseRef.child('dimScreens').on('value', function(data){
+	if (data.A.B)
+		exec( '/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine' );
+});
+
+firebaseRef.child('musicNext').on('value', function(data){
+
 });
 
 itunes.on('playing', function(data){

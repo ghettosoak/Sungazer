@@ -1,5 +1,0 @@
-<div class="music">
-	<div class="press noLink up"></div>
-	<div class="press noLink down"></div>
-	<div class="press noLink playpause" data-playing="true"></div>
-</div>

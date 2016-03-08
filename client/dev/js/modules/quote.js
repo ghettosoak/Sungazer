@@ -1,15 +1,16 @@
 $(function($){
-	var $quote = $('.quote_interior'),
+	var $quote = $('.quote'),
+		$quoteInterior = $quote.find('.quote_interior'),
 		quoteGetter = function(){
 			$.ajax({
 				url: 'http://quotesondesign.com/api/3.0/api-3.0.json',
 				dataType: 'jsonp',
 			}).done(function(data) {
 
-				$quote.addClass('leaving');
+				$quoteInterior.addClass('leaving');
 
 				setTimeout(function(){
-					$quote.removeClass('leaving')
+					$quoteInterior.removeClass('leaving')
 						.addClass('entering')
 						.attr('data-href', 'https://www.google.com/search?q=' + data.author)
 						.removeClass('smallish')
@@ -22,14 +23,16 @@ $(function($){
 						);
 
 						setTimeout(function(){
-							$quote.removeClass('entering');
+							$quoteInterior.removeClass('entering');
 
 						}, window.transitionTime * 2);
 				}, window.transitionTime);
 
 				setTimeout(function(){
-					if ($quote.find('p').outerHeight(true) > $quote.parent().height())
-						$quote.parent().addClass('smallish')
+					if ($('.quote').find('p').outerHeight(true) > $quote.height())
+						$quote.addClass('smallish')
+					else
+						$quote.removeClass('smallish')
 				})
 			}).fail(function(error){
 				console.log(error);

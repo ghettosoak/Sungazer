@@ -1,0 +1,105 @@
+@control_icon_size: 80px;
+
+.control{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 250px;
+	height: 259px;
+	margin-left: -208px;
+	padding: 20px;
+
+	.songtitle{
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		font-size: 24px;
+		line-height: 24px;
+		color: white;
+		width: 100%;
+		height: 73px;
+		overflow: hidden;
+		padding: 25px 15px 0;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+	}
+
+	// .buttons{
+	// 	position: absolute;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	padding: 0 20px 20px;
+
+		div{
+			position: absolute;
+			border-radius: 50%;
+
+			&:before{
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+		}
+
+		.shareMouse,
+		.dimScreens,
+		.mute,
+		.next{
+			height: 69px;
+			width: 69px;
+			&:before{	
+				height: @control_icon_size;
+				width: @control_icon_size;
+				margin: -@control_icon_size / 2 0 0 -@control_icon_size / 2;
+			}
+		}
+
+
+		.shareMouse{
+			bottom: 85px;
+			right: 10px;
+		}
+		.dimScreens{
+			bottom: 85px;
+			left: 10px;
+		}
+		.mute{
+			bottom: 10px;
+			left: 10px;
+		}
+		.next{
+			bottom: 10px;
+			right: 10px;
+		}
+
+		@playPauseSize: 101px;
+
+		.playpause{
+			height: 90px;
+			width: 90px;
+			bottom: 35px;
+			left: 80px;
+
+			&:before{
+				height: @playPauseSize;
+				width: @playPauseSize;
+				margin: -@playPauseSize / 2 0 0 -@playPauseSize / 2;
+			}
+		}
+
+		.mute:before{ .icon(1, 6, @control_icon_size); }
+		.mute.active:before{ .icon(4, 6, @control_icon_size); }
+		.playpause:before{ .icon(0, 6, @playPauseSize); }
+		.playpause.active:before{ .icon(3, 6, @playPauseSize); }
+
+		.openMusic:before{ .icon(1, 7, @control_icon_size); }
+		.next:before{ .icon(2, 7, @control_icon_size); }
+		.dimScreens:before{ .icon(2, 6, @control_icon_size); }
+		.shareMouse:before{ .icon(0, 7, @control_icon_size); }
+	// }
+}
