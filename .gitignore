@@ -1,0 +1,10 @@
+client
+daemon
+daemon/frontend/_gulp
+daemon/frontend/_gulp/node_modules
+daemon/frontend
+node_modules
+daemon/frontend/_gulp/gulp
+daemon/frontend/_gulp/gulpfile.js
+daemon/frontend/_gulp/package.json
+daemon/frontend/_gulp/README.md
