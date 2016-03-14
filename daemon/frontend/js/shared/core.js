@@ -195,40 +195,40 @@ $(function() {
 		};
 	})(); 
 
-	exports.gMapLoader = (function() {
+	// exports.gMapLoader = (function() {
 
-		// Variables
-		//////////////////////////////////////////////////
-		var subscribers = [];
+	// 	// Variables
+	// 	//////////////////////////////////////////////////
+	// 	var subscribers = [];
 
-		// Load Google Maps
-		//////////////////////////////////////////////////
-		gMapSetup = function() {
-			var script = document.createElement('script');
-			script.type = 'text/javascript';
-			script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=$$_.gMapLoader.ready';
-			document.body.appendChild(script)
-		};
+	// 	// Load Google Maps
+	// 	//////////////////////////////////////////////////
+	// 	gMapSetup = function() {
+	// 		var script = document.createElement('script');
+	// 		script.type = 'text/javascript';
+	// 		script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' + 'callback=$$_.gMapLoader.ready';
+	// 		document.body.appendChild(script)
+	// 	};
 
-		function ready() {
-			for (var method in subscribers) {
-				subscribers[method]();
-			}
-		};
+	// 	function ready() {
+	// 		for (var method in subscribers) {
+	// 			subscribers[method]();
+	// 		}
+	// 	};
 
-		function subscribe(method) {
-			subscribers.push(method);
-		};
+	// 	function subscribe(method) {
+	// 		subscribers.push(method);
+	// 	};
 
-		$(window).load(gMapSetup)
+	// 	$(window).load(gMapSetup)
 
-		// Returnal
-		//////////////////////////////////////////////////
+	// 	// Returnal
+	// 	//////////////////////////////////////////////////
 
-		return {
-			ready: ready,
-			subscribe: subscribe
-		};
-	})();
+	// 	return {
+	// 		ready: ready,
+	// 		subscribe: subscribe
+	// 	};
+	// })();
 
 });

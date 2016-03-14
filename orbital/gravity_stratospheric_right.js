@@ -73,7 +73,8 @@ firebaseRef.child('music/next').on('value', function(data){
 			console.log(arguments[0].artist)
 			firebaseRef.child('music').update({ 
 				next: false,
-				nowPlaying: arguments[0].artist
+				nowPlaying: arguments[0].artist + ' – ' + arguments[0].name,
+				openMusic: arguments[0].artist
 			});
 		});		
 	}
@@ -91,7 +92,8 @@ itunes.on('playing', function(data){
 			playing: true,
 			source_itunes: true,
 			source_youtube: false,
-			nowPlaying: data.artist
+			nowPlaying: data.artist + ' – ' + data.name,
+			openMusic: data.artist
 		});
 	}
 });
@@ -100,9 +102,6 @@ itunes.on('paused', function(data){
 	console.log('PAUSING')
 	firebaseRef.child('music').update({ playing: false });
 });
-
-
-
 
 
 

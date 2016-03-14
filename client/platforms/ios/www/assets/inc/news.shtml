@@ -1,6 +1,12 @@
 <div class="news">
-	<div class="source nyt">
+	<div class="press source google" data-href="https://news.google.com/">
+		<a class="movingAbout"></a>
+		<a class="movingAbout"></a>
+		<a class="movingAbout"></a>
 	</div>
-	<div class="source hackernews">
+	<div class="press source hackernews" data-href="https://news.ycombinator.com/">
+		<a class="movingAbout"></a>
+		<a class="movingAbout"></a>
+		<a class="movingAbout"></a>
 	</div>
 </div>

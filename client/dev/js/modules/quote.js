@@ -23,17 +23,19 @@ $(function($){
 						);
 
 						setTimeout(function(){
-							$quoteInterior.removeClass('entering');
+							if ($('.quote').find('p').outerHeight(true) > $quote.height())
+								$quote.addClass('smallish')
+							else
+								$quote.removeClass('smallish')
 
-						}, window.transitionTime * 2);
+							setTimeout(function(){
+								$quoteInterior.removeClass('entering');
+
+							}, window.transitionTime * 3);
+						}, window.transitionTime * 2)
+
 				}, window.transitionTime);
 
-				setTimeout(function(){
-					if ($('.quote').find('p').outerHeight(true) > $quote.height())
-						$quote.addClass('smallish')
-					else
-						$quote.removeClass('smallish')
-				})
 			}).fail(function(error){
 				console.log(error);
 			});

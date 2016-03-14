@@ -1,19 +1,25 @@
 <div class="stats">
-	<div class="stat 1min">
-		<p>1min</p>
-		<div class="pie"></div>
-	</div>
-	<div class="stat 5min">
-		<p>5min</p>
-		<div class="pie"></div>
-	</div>
-	<div class="stat 15min">
-		<p>15min</p>
-		<div class="pie"></div>
-	</div>
-	<div class="stat memory">
-		<p>memory</p>
-		<div class="pie"></div>
-	</div>
-	<p class="uptime"></p>
+	<a class="block_link flash" href="https://cloud.digitalocean.com/droplets">
+		<div class="stat 1min movingAbout">
+			<p>1min</p>
+			<div class="pie"></div>
+		</div>
+		<div class="stat 5min movingAbout">
+			<p>5min</p>
+			<div class="pie"></div>
+		</div>
+		<div class="stat 15min movingAbout">
+			<p>15min</p>
+			<div class="pie"></div>
+		</div>
+		<div class="stat memory movingAbout">
+			<p>memory</p>
+			<div class="pie"></div>
+		</div>
+		<p class="uptime movingAbout"></p>
+
+		<div class="flasher">
+			<p><span class="digitalocean_link"></span></p>
+		</div>
+	</a>
 </div>

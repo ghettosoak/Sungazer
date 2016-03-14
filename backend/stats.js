@@ -35,3 +35,5 @@ var http = require('http'),
 
 		next();
 	});
+
+	console.log(app)

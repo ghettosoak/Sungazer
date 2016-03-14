@@ -23,7 +23,6 @@ $(function($){
 		$news.find('.' + target + ' a').each(function(e){
 
 			if (typeof _List[target][e] === 'object'){
-
 				var $that = $(this);
 
 				setTimeout(function(){
@@ -44,6 +43,9 @@ $(function($){
 
 				googleTransition += window.transitionTime;
 			}
+			// else if ($.isEmptyObject(_List[target][e])){
+			// 	$that.parent().addClass('')
+			// }
 		});
 	},
 

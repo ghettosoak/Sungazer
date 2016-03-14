@@ -1,6 +1,6 @@
 $(function($){
-	window.devBackground();
-	// window.backgrounding();
+	// window.devBackground();
+	window.backgrounding();
 	window.quoting();
 	window.statsing();
 	window.clocking();

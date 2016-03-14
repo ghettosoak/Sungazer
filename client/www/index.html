@@ -14,6 +14,10 @@
 
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+
+    <script>
+        document.addEventListener("touchstart", function() {},false);
+    </script>
 </head>
 
 <body>
@@ -26,7 +30,7 @@
 
 	<div class="main">
 
-		<div class="clock">
+		<div class="clock press noLink">
 	<div class="hours"></div>
 	<div class="minutes"></div>
 	<div class="seconds"></div>
@@ -95,164 +99,268 @@
 	</div>
 
 	<audio id="clock_tick">
-		<source src="assets/sound/tick.mp3"></source>
+		<source src="assets/sound/tick.wav"></source>
 	</audio>
 </div>
-		<div class="calendar">
-	
-</div>
-		<div class="quote smallish">
-	<a href="http://quotesondesign.com/?p=1911"><p>It's extremely difficult to be simultaneously concerned with the end-user experience of whatever it is that you're building and the architecture of the program that delivers that experience.</p><span>— James Hague</span></a>
+		<div class="quote">
+	<div class="quote_interior movingAbout press flash" data-href="http://quotesondesign.com/?p=1911">
+		<p>It's extremely difficult to be simultaneously concerned with the end-user experience of whatever it is that you're building and the architecture of the program that delivers that experience.</p>
+		<span>— James Hague</span>
+
+		<div class="flasher">
+			<p><span class="searcher"></span>James Hague</p>
+		</div>
+	</div>
 </div>
 		<div class="weather">
-	<div class="city brn">
-		<p class="title">BRN</p>
-		<p class="icon" data-weather="" data-planetary=""></p>
-		<p class="temp"></p>
-		<ul class="threeday">
-			<li><p class="day">Th</p><p class="icon" data-weather="500" data-planetary="day"></p><p class="temp"><span>0</span> / <span>0</span></p></li><li><p class="day">Fr</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li><li><p class="day">Sa</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li>
-		</ul>
-	</div>
-	<div class="city chi">
-		<p class="title">chi</p>
-		<p class="icon" data-weather="" data-planetary=""></p>
-		<p class="temp"></p>
-		<ul class="threeday">
-			<li><p class="day">Th</p><p class="icon" data-weather="500" data-planetary="day"></p><p class="temp"><span>0</span> / <span>0</span></p></li><li><p class="day">Fr</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li><li><p class="day">Sa</p><p class="icon" data-weather="800" data-planetary="day"></p><p class="temp"><span>3</span> / <span>3</span></p></li>
-		</ul>
-	</div>
+	<a class="block_link" href="http://weather.cod.edu/">
+		<div class="city brn">
+			<p class="title movingAbout">BRN</p>
+			<p class="icon movingAbout" data-weather="" data-planetary=""></p>
+			<p class="temp movingAbout">
+				<span class="current"></span>
+				<span class="hi-lo" data-lo="" data-hi=""/>/</span>
+			</p>
+			<ul class="threeday">
+				<li>
+					<p class="day">Th</p>
+					<p class="icon" data-weather="500" data-planetary="day"></p>
+					<p class="threeday_temp"><span>0</span> / <span>0</span></p>
+				</li>
+				<li>
+					<p class="day">Fr</p>
+					<p class="icon" data-weather="800" data-planetary="day"></p>
+					<p class="threeday_temp"><span>3</span> / <span>3</span></p></li>
+				<li>
+					<p class="day">Sa</p>
+					<p class="icon" data-weather="800" data-planetary="day"></p>
+					<p class="threeday_temp"><span>3</span> / <span>3</span></p>
+				</li>
+			</ul>
+		</div>
+		<div class="city chi">
+			<p class="title movingAbout">chi</p>
+			<p class="icon movingAbout" data-weather="" data-planetary=""></p>
+			<p class="temp movingAbout">
+				<span class="current"></span>
+				<span class="hi-lo" data-hi="" data-lo=""/>/</span>
+			</p>
+			<ul class="threeday">
+				<li>
+					<p class="day">Th</p> 
+					<p class="icon" data-weather="500" data-planetary="day"></p>
+					<p class="threeday_temp"><span>0</span> / <span>0</span></p>
+				</li>
+				<li>
+					<p class="day">Fr</p>
+					<p class="icon" data-weather="800" data-planetary="day"></p>
+					<p class="threeday_temp"><span>3</span> / <span>3</span></p></li>
+				<li>
+					<p class="day">Sa</p>
+					<p class="icon" data-weather="800" data-planetary="day"></p>
+					<p class="threeday_temp"><span>3</span> / <span>3</span></p>
+				</li>
+			</ul>
+		</div>
+	</a>
 </div>
 		<div class="news">
-	<div class="source nyt">
+	<div class="press source google" data-href="https://news.google.com/">
+		<a class="movingAbout"></a>
+		<a class="movingAbout"></a>
+		<a class="movingAbout"></a>
 	</div>
-	<div class="source hackernews">
+	<div class="press source hackernews" data-href="https://news.ycombinator.com/">
+		<a class="movingAbout"></a>
+		<a class="movingAbout"></a>
+		<a class="movingAbout"></a>
 	</div>
 </div>
-		<div class="shortcuts">
-	<ul>
-		<li>
-			<p>
-				goto line
-				<span>
-					<i>ctrl</i> + <i>g</i>
-				</span>
-			</p>
-		</li>
-	</ul>
-
-	<ul>
-		<li>
-			<p>
-				destroy pane
-				<span class="directed">
-					<i>cmd</i> + <i>k</i> // 
-					<i>shift</i> + <i>cmd</i> + <i class="direction direction_all"></i>
-				</span>
-			</p>
-		</li>
-	</ul>
-
-	<ul>
-		<li>
-			<p>
-				quick find all
-				<span>
-					<i>ctrl</i> + <i>cmd</i> + <i>g</i>
-				</span>
-			</p>
-		</li>
-		<li>
-			<p>
-				quick find next
-				<span>
-					<i>cmd</i> + <i>g</i>
-				</span>
-			</p>
-		</li>
-	</ul>
-
-	<ul>
-		<li>
-			<p>
-				in/decrement by 1
-				<span class="directed">
-					<i>option</i> + <i class="direction direction_updown"></i>
-				</span>
-			</p>
-		</li>
-		<li>
-			<p>
-				in/decrement by 10
-				<span class="directed">
-					<i>option</i> + <i>cmd</i> + <i class="direction direction_updown"></i>
-				</span>
-			</p>
-		</li>
-	</ul>
-
-</div>
-		<div class="music">
-	<div class="up"></div>
-	<div class="down"></div>
-	<div class="playpause" data-playing="true"></div>
+		<div class="control">
+	<h1 class="songtitle press" data-href="https://www.google.com/search?q=Of Montreal">
+		Of Montreal – Wraith Pinned to the Mist and Other Games but a longer name
+	</h1>
+	
+	<div class="press noLink shareMouse" data-playing="true"></div>
+	<div class="press noLink dimScreens" data-playing="true"></div>
+	<div class="press noLink mute"></div>
+	<div class="press noLink playpause" data-playing="true"></div>
+	<div class="press noLink next" data-playing="true"></div>
 </div>
 		<div class="stats">
-	<div class="stat 1min">
-		<p>1min</p>
-		<div class="pie"></div>
-	</div>
-	<div class="stat 5min">
-		<p>5min</p>
-		<div class="pie"></div>
-	</div>
-	<div class="stat 15min">
-		<p>15min</p>
-		<div class="pie"></div>
-	</div>
-	<div class="stat memory">
-		<p>memory</p>
-		<div class="pie"></div>
-	</div>
-	<p class="uptime"></p>
+	<a class="block_link flash" href="https://cloud.digitalocean.com/droplets">
+		<div class="stat 1min movingAbout">
+			<p>1min</p>
+			<div class="pie"></div>
+		</div>
+		<div class="stat 5min movingAbout">
+			<p>5min</p>
+			<div class="pie"></div>
+		</div>
+		<div class="stat 15min movingAbout">
+			<p>15min</p>
+			<div class="pie"></div>
+		</div>
+		<div class="stat memory movingAbout">
+			<p>memory</p>
+			<div class="pie"></div>
+		</div>
+		<p class="uptime movingAbout"></p>
+
+		<div class="flasher">
+			<p><span class="digitalocean_link"></span></p>
+		</div>
+	</a>
 </div>
 		<div class="links">
-	<a href="http://lickth.is">
-		<span class="icon-lick"></span>
-		lick
-	</a>
-	<a href="http://inter.ject.ch/#/time/User">
+	<a class="" href="http://inter.ject.ch/#/time/User">
 		<span class="icon-playpause"></span>
 		inter.ject
 	</a>
-	<a href="http://ab.ject.ch">
+	<a class="" href="http://ab.ject.ch">
 		<span class="icon-binoculars"></span>
 		ab.ject
 	</a>
-	<a href="https://docs.google.com/spreadsheets/u/0/">
+	<a class="" href="https://docs.google.com/spreadsheets/u/0/">
 		<span class="icon-gdrive"></span>
 		google docs
 	</a>
-	<a href="https://feedly.com/i/my">
-		<span class="icon-feedly"></span>
-		feedly
+	<a class="" href="https://www.youtube.com/">
+		<span class="icon-youtube"></span>
+		youtube
 	</a>
-	<a href="http://read.ject.ch/">
-		<span class="icon-pfuuse"></span>
-		pfuuse
+	<a class="" href="https://www.quora.com/">
+		<span class="icon-quora"></span>
+		quora
 	</a>
-	<a href="https://www.firebase.com/account/#/">
+	<a class="" href="http://stackexchange.com/">
+		<span class="icon-stackexchange"></span>
+		stack exchange
+	</a>
+	<a class="" href="https://www.firebase.com/account/#/">
 		<span class="icon-firebase"></span>
 		firebase
 	</a>
-	<a href="https://itunesconnect.apple.com">
+	<a class="" href="https://itunesconnect.apple.com">
 		<span class="icon-apple"></span>
 		itunes connect
 	</a>
-	<a href="https://fortawesome.github.io/Font-Awesome/cheatsheet/">
+	<a class="" href="https://fortawesome.github.io/Font-Awesome/cheatsheet/">
 		<span class="icon-flag"></span>
 		font awesome
 	</a>
 </div>
+		
+		<div class="widehanded">
+	<div class="row">
+		<div class="key numlock">
+			<span>
+				shift
+			</span>
+		</div>
+		<div class="key slash">
+			<span>
+				ctrl
+			</span>
+		</div>
+		<div class="key star">
+			<span>
+				option
+			</span>
+		</div>
+		<div class="key minus">
+			<span>
+				cmd
+			</span>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="key kp_7">
+			<span>
+				mission control
+			</span>
+		</div>
+		<div class="key kp_8">
+			<span>
+				desktop
+			</span>
+		</div>
+		<div class="key kp_9">
+			<span>
+				cmd + tab
+			</span>
+		</div>
+		
+		<div class="bigkey plus">
+			<span>
+				left<br />click
+			</span>
+		</div>
+
+		<div class="key kp_4">
+			<span>
+				paste
+			</span>
+		</div>
+		<div class="key kp_5">
+			<span>
+				copy
+			</span>
+		</div>
+		<div class="key kp_6">
+			<span>
+				cut
+			</span>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="key kp_1">
+			<span>
+				undo
+			</span>
+		</div>
+		<div class="key kp_2">
+			<span>
+				switch window
+			</span>
+		</div>
+		<div class="key kp_3">
+			<span>
+				enter
+			</span>
+		</div>
+		
+		<div class="bigkey enter">
+			<span>
+				right<br />click
+			</span>
+		</div>
+
+		<div class="key kp_0">
+			<span>
+				cmd + c
+			</span>
+		</div>
+		<div class="key backspace">
+			<span>
+				divvy
+			</span>
+		</div>
+		<div class="key dot">
+			<span>
+				comment
+			</span>
+		</div>
+
+	</div>
+	
+</div>
+
+		<!--file="assets/inc/calendar.shtml" -->
+		<!--file="assets/inc/shortcuts.shtml" -->
 
 		<audio id="link">
 			<source src="assets/sound/click.wav"></source>

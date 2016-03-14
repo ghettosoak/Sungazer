@@ -13,6 +13,10 @@
 
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+
+    <script>
+        document.addEventListener("touchstart", function() {},false);
+    </script>
 </head>
 
 <body>
@@ -26,14 +30,17 @@
 	<div class="main">
 
 		<!--#include file="assets/inc/clock.shtml" -->
-		<!--#include file="assets/inc/calendar.shtml" -->
 		<!--#include file="assets/inc/quote.shtml" -->
 		<!--#include file="assets/inc/weather.shtml" -->
 		<!--#include file="assets/inc/news.shtml" -->
-		<!--#include file="assets/inc/shortcuts.shtml" -->
-		<!--#include file="assets/inc/music.shtml" -->
+		<!--#include file="assets/inc/control.shtml" -->
 		<!--#include file="assets/inc/stats.shtml" -->
 		<!--#include file="assets/inc/links.shtml" -->
+		
+		<!--#include file="assets/inc/widehanded.shtml" -->
+
+		<!--file="assets/inc/calendar.shtml" -->
+		<!--file="assets/inc/shortcuts.shtml" -->
 
 		<audio id="link">
 			<source src="assets/sound/click.wav"></source>

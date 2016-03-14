@@ -1,74 +1,63 @@
-<!doctype html>
-<!--[if lte IE 8]>     <html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE]>       <html class="ie" lang="en"> <![endif]-->
-<!--[if !IE]><!--> <html class="not_ie" lang="en"> <!--<![endif]-->
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<html ng-app="sungazer">
 
-    <title>SUNGAZER DAEMON</title>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="shortcut icon" href="assets/img/favicon.ico" />
-    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+	    <title>SUNGAZER DAEMON</title>
 
-    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
-</head>
+	    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+	    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
 
-<body>
+	    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1" />
+	    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+	</head>
 
-	<img class="logo" src="assets/img/bg.png">
+	<body id="ng-app">
 
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <div id="player"></div>
-    <div id="playlist"></div>
+		<img class="logo" src="assets/img/bg.png">
+		
+		<div id="switches">
+			<div class="tab_opener"></div>
+			<div class="music_player"></div>
+			<div class="muting"></div>
+		</div>
 
-    <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
+		<div id="music" ng-controller="musicCtrl">
+			
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			<div id="player"></div>
+			
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'M7lc1UVf-VE',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
+			<div id="playlist">
+				<input type="text" id="playlist_input" ng-keyup="inputKeyup($event)" ng-model="singleton.input" />
+				<div class="list">
+					<div 
+						class="playlist_item" 
+						ng-repeat="item in music.youtube.singletons track by $index">
+						<span>{{item.cover}}</span>
+						<span>{{item.title}}</span>
+						<span>{{item.url}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
+		<script src="assets/js/vendor/jquery-1.10.2.min.js"></script>
+		<script src="assets/js/vendor/jquery-ui.min.js"></script>
 
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-    </script>
+		<script src="assets/js/vendor/angular_1.2.16/angular.min.js"></script>
+		<script src="assets/js/vendor/angular_1.2.16/angular-sanitize.min.js"></script>
 
-<script type="text/javascript" src="assets/js/main.js"></script>
+		<script src="assets/js/vendor/hotkeys.min.js"></script>
+		<script src="assets/js/vendor/sortable.js"></script>
+		<script src="assets/js/vendor/firebase.js"></script>
+		<script src="assets/js/vendor/angularfire.min.js"></script>
 
-</body>
+		<script src="https://apis.google.com/js/client.js?onload=init"></script>
 
+		<script type="text/javascript" src="assets/js/main.js"></script>
+
+	</body>
 
 </html>

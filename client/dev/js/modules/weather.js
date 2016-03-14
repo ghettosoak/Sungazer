@@ -101,9 +101,12 @@ $(function($){
 
 	cities = function(){
 		setTimeout(function(){
-
 			getWeather('brn', '3007,ch', 'Bern,ch');
-			getWeather('chi', '60187,us', 'Chicago,us');
+
+			setTimeout(function(){
+				getWeather('chi', '60187,us', 'Chicago,us');
+			}, 1000)
+
 		}, 2000)
 	};
 

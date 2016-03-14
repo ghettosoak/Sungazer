@@ -73,9 +73,14 @@ $(function($){
 		$songtitle.html(currentPlaying);
 	});
 
-	$songtitle.on('touchend', function(){
-		window._Firebase.update({ openMusic: true });
+	window._Firebase.child('music/openMusic').on('value', function(snapshot) {
+		var openMusic = snapshot.val();
+		$songtitle.attr('data-href', 'https://www.google.com/search?q=' + openMusic);
 	});
+
+	// $songtitle.on('touchend', function(){
+	// 	window._Firebase.update({ openMusic: true });
+	// });
 
 
 

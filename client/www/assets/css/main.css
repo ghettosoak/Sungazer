@@ -2276,9 +2276,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .searcher {
-  background-position: -100px 0px !important;
-}
+.pressing .searcher,
 .pressing.searcher {
   background-position: -100px 0px !important;
 }
@@ -2817,26 +2815,39 @@ a * {
   width: 50%;
   position: relative;
   float: left;
-  font-size: 40px;
-  line-height: 40px;
   text-align: center;
   padding: 10px;
   height: 100%;
 }
-.weather .city .brn {
-  border-right: 1px solid white;
+.weather .city .title {
+  font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 5px;
 }
 .weather .city .icon {
   font-family: wxFont;
+  font-size: 55px;
+  line-height: 65px;
 }
 .weather .city .temp {
   position: absolute;
   top: 110px;
+  margin: 0 auto;
+  font-size: 45px;
+  line-height: 45px;
   width: -webkit-calc(100% - 20px);
   width: calc(100% - 20px);
-  left: 10px;
 }
-.weather .city .temp:after {
+.weather .city .temp .current,
+.weather .city .temp .hi-lo {
+  position: absolute;
+  left: 50%;
+  display: block;
+}
+.weather .city .temp .current {
+  margin: 0 0 0 -40px;
+}
+.weather .city .temp .current:after {
   content: '';
   position: absolute;
   top: 5px;
@@ -2844,6 +2855,23 @@ a * {
   width: 7px;
   border: 1px solid white;
   border-radius: 10px;
+}
+.weather .city .temp .hi-lo {
+  font-size: 25px;
+  line-height: 15px;
+}
+.weather .city .temp .hi-lo:before,
+.weather .city .temp .hi-lo:after {
+  position: relative;
+  display: block;
+}
+.weather .city .temp .hi-lo:before {
+  content: attr(data-lo);
+  margin: 8px 29px -10px 0;
+}
+.weather .city .temp .hi-lo:after {
+  content: attr(data-hi);
+  margin: -7px 0 0 22px;
 }
 .weather .city .threeday {
   position: absolute;
@@ -2854,8 +2882,6 @@ a * {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 20px;
-  line-height: 20px;
 }
 .weather .city .threeday li {
   width: 33.3333%;
@@ -2863,8 +2889,14 @@ a * {
   float: left;
   margin: 0;
   padding: 0;
+  font-size: 20px !important;
+  line-height: 20px;
 }
-.weather .city .threeday .threeday_temp:after {
+.weather .city .threeday li .icon {
+  font-size: 20px;
+  line-height: 20px;
+}
+.weather .city .threeday li .threeday_temp:after {
   content: none;
 }
 .weather .icon[data-planetary="day"][data-weather="200"]:before,
@@ -3076,9 +3108,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-youtube {
-  background-position: -240px -120px !important;
-}
+.pressing .icon-youtube,
 .pressing.icon-youtube {
   background-position: -240px -120px !important;
 }
@@ -3090,9 +3120,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-playpause {
-  background-position: -180px -60px !important;
-}
+.pressing .icon-playpause,
 .pressing.icon-playpause {
   background-position: -180px -60px !important;
 }
@@ -3104,9 +3132,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-binoculars {
-  background-position: -300px -240px !important;
-}
+.pressing .icon-binoculars,
 .pressing.icon-binoculars {
   background-position: -300px -240px !important;
 }
@@ -3118,9 +3144,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-gdrive {
-  background-position: -180px -180px !important;
-}
+.pressing .icon-gdrive,
 .pressing.icon-gdrive {
   background-position: -180px -180px !important;
 }
@@ -3132,9 +3156,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-quora {
-  background-position: -180px -240px !important;
-}
+.pressing .icon-quora,
 .pressing.icon-quora {
   background-position: -180px -240px !important;
 }
@@ -3146,9 +3168,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-stackexchange {
-  background-position: -240px -60px !important;
-}
+.pressing .icon-stackexchange,
 .pressing.icon-stackexchange {
   background-position: -240px -60px !important;
 }
@@ -3160,9 +3180,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-firebase {
-  background-position: -300px -180px !important;
-}
+.pressing .icon-firebase,
 .pressing.icon-firebase {
   background-position: -300px -180px !important;
 }
@@ -3174,9 +3192,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-apple {
-  background-position: -180px 0px !important;
-}
+.pressing .icon-apple,
 .pressing.icon-apple {
   background-position: -180px 0px !important;
 }
@@ -3188,9 +3204,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .icon-flag {
-  background-position: -240px -180px !important;
-}
+.pressing .icon-flag,
 .pressing.icon-flag {
   background-position: -240px -180px !important;
 }
@@ -3230,7 +3244,7 @@ a * {
   overflow: hidden;
   position: relative;
   float: left;
-  padding: 5px 10px 10px;
+  padding: 5px 10px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -3245,7 +3259,7 @@ a * {
   left: 10px;
   background-color: white;
 }
-.news .source a:last-child:before {
+.news .source a:last-child:not(:empty):before {
   content: none;
 }
 .google:before {
@@ -3256,9 +3270,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .google:before {
-  background-position: -90px -60px !important;
-}
+.pressing .google:before,
 .pressing.google:before {
   background-position: -90px -60px !important;
 }
@@ -3270,9 +3282,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .nyt:before {
-  background-position: -150px -30px !important;
-}
+.pressing .nyt:before,
 .pressing.nyt:before {
   background-position: -150px -30px !important;
 }
@@ -3284,9 +3294,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .hackernews:before {
-  background-position: -150px -60px !important;
-}
+.pressing .hackernews:before,
 .pressing.hackernews:before {
   background-position: -150px -60px !important;
 }
@@ -3349,9 +3357,7 @@ a * {
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.pressing .digitalocean_link {
-  background-position: -240px -240px !important;
-}
+.pressing .digitalocean_link,
 .pressing.digitalocean_link {
   background-position: -240px -240px !important;
 }
@@ -3377,202 +3383,236 @@ a * {
   font-size: 25px;
   line-height: 25px;
 }
-.calendar {
-  width: 300px;
-  height: 250px;
+/*@import "modules/calendar.less";*/
+/*@import "modules/shortcuts.less";*/
+.control {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 250px;
+  height: 259px;
+  margin-left: -208px;
+  padding: 20px;
+}
+.control .songtitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 30px;
+  line-height: 30px;
+  color: white;
+  width: 100%;
+  height: 105px;
+  overflow: hidden;
+  padding: 25px 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.control div {
+  position: absolute;
+  border-radius: 50%;
+}
+.control div:before {
+  content: '';
   position: absolute;
   top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.control .shareMouse,
+.control .dimScreens,
+.control .mute,
+.control .next {
+  height: 69px;
+  width: 69px;
+}
+.control .shareMouse:before,
+.control .dimScreens:before,
+.control .mute:before,
+.control .next:before {
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+}
+.control .shareMouse {
+  bottom: 85px;
+  right: 10px;
+}
+.control .dimScreens {
+  bottom: 85px;
+  left: 10px;
+}
+.control .mute {
+  bottom: 10px;
+  left: 10px;
+}
+.control .next {
+  bottom: 10px;
+  right: 10px;
+}
+.control .playpause {
+  height: 90px;
+  width: 90px;
+  bottom: 35px;
+  left: 80px;
+}
+.control .playpause:before {
+  height: 101px;
+  width: 101px;
+  margin: -50.5px 0 0 -50.5px;
+}
+.control .mute:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -80px -480px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .mute:before,
+.pressing.control .mute:before {
+  background-position: -320px -480px !important;
+}
+.control .mute.active:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -320px -480px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .mute.active:before,
+.pressing.control .mute.active:before {
+  background-position: -560px -480px !important;
+}
+.control .playpause:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -303px -606px;
+  -webkit-background-size: 606px 606px;
+          background-size: 606px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .playpause:before,
+.pressing.control .playpause:before {
+  background-position: -606px -606px !important;
+}
+.control .playpause.active:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: 0px -606px;
+  -webkit-background-size: 606px 606px;
+          background-size: 606px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .playpause.active:before,
+.pressing.control .playpause.active:before {
+  background-position: -303px -606px !important;
+}
+.control .openMusic:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -80px -560px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .openMusic:before,
+.pressing.control .openMusic:before {
+  background-position: -320px -560px !important;
+}
+.control .next:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -160px -560px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .next:before,
+.pressing.control .next:before {
+  background-position: -400px -560px !important;
+}
+.control .dimScreens:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -160px -480px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .dimScreens:before,
+.pressing.control .dimScreens:before {
+  background-position: -400px -480px !important;
+}
+.control .shareMouse:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: 0px -560px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .shareMouse:before,
+.pressing.control .shareMouse:before {
+  background-position: -240px -560px !important;
+}
+.widehanded {
+  width: 300px;
+  height: 508px;
+  position: absolute;
+  bottom: 0;
   left: 0;
-  margin-top: -129px;
   padding: 10px;
 }
-.calendar .clndr-control-button {
-  display: none;
-}
-.calendar .month {
-  text-align: center;
-  font-size: 25px;
-}
-.calendar table {
-  width: 100%;
-  font-size: 20px;
-  line-height: 30px;
-}
-.calendar table .header-days {
-  border-bottom: 1px solid white;
-}
-.calendar table .header-days .header-day {
-  text-align: center;
-}
-.calendar table .adjacent-month {
-  opacity: .5;
-}
-.calendar table .day {
-  text-align: center;
-}
-.calendar table .day .day-contents {
-  width: 30px;
-  margin: 0 auto;
-  position: relative;
-}
-.calendar table .today .day-contents {
-  background-color: white;
-  border-radius: 50px;
-  color: white;
-}
-.ready .calendar table .today .day-contents {
-  color: #1f2562;
-}
-.shortcuts {
-  position: absolute;
-  width: 380px;
-  height: 259px;
-  bottom: 0;
-  left: 0;
-  font-size: 25px;
-  padding: 15px 10px 10px;
-}
-.shortcuts ul {
-  margin: 5px 0 0;
-  padding: 0;
-}
-.shortcuts ul li {
-  list-style: none;
-  overflow: hidden;
-  padding-bottom: 5px;
-}
-.shortcuts p {
-  margin: 5px 0 0;
-  position: relative;
-  float: left;
-  width: 100%;
-}
-.shortcuts p span {
-  float: right;
-  position: relative;
-}
-.shortcuts p span.directed {
-  top: -8px;
-}
-.shortcuts i {
-  font-style: normal;
-  padding: 3px;
-  border: 1px solid white;
+.widehanded .key,
+.widehanded .bigkey {
   border-radius: 5px;
-}
-.shortcuts i.direction {
-  width: 27px;
-  display: inline-block;
-  height: 26px;
+  width: 59px;
   position: relative;
-  bottom: -5px;
+  margin: 5px;
+  display: table;
+  background-color: white;
+  color: #444444;
 }
-.shortcuts i.direction_all {
-  background-image: url(../img/spritesheet.png);
-  background-position: 0px -125px;
-  -webkit-background-size: 150px 150px;
-          background-size: 150px;
-  background-repeat: no-repeat;
+.widehanded .key span,
+.widehanded .bigkey span {
+  width: 100%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 20px;
+}
+.widehanded .row {
+  width: 100%;
+  position: relative;
   overflow: hidden;
+  float: left;
+  margin: 0;
 }
-.pressing .shortcuts i.direction_all {
-  background-position: -75px -125px !important;
-}
-.pressing.shortcuts i.direction_all {
-  background-position: -75px -125px !important;
-}
-.shortcuts i.direction_updown {
-  background-image: url(../img/spritesheet.png);
-  background-position: -25px -125px;
-  -webkit-background-size: 150px 150px;
-          background-size: 150px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.pressing .shortcuts i.direction_updown {
-  background-position: -100px -125px !important;
-}
-.pressing.shortcuts i.direction_updown {
-  background-position: -100px -125px !important;
-}
-.music {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 170px;
-  height: 259px;
-  margin-left: -128px;
-}
-.music div {
-  position: absolute;
-}
-.music .up,
-.music .down {
-  width: 85px;
+.widehanded .key {
   height: 87px;
-  top: 0;
+  float: left;
 }
-.up {
-  background-image: url(../img/spritesheet.png);
-  background-position: -85px -510px;
-  -webkit-background-size: 510px 510px;
-          background-size: 510px;
-  background-repeat: no-repeat;
-  overflow: hidden;
+.widehanded .bigkey {
+  height: 184px;
+  float: right;
+  margin-right: 7px;
 }
-.pressing .up {
-  background-position: -340px -510px !important;
-}
-.pressing.up {
-  background-position: -340px -510px !important;
-}
-.down {
-  left: 50%;
-  background-image: url(../img/spritesheet.png);
-  background-position: -170px -510px;
-  -webkit-background-size: 510px 510px;
-          background-size: 510px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.pressing .down {
-  background-position: -425px -510px !important;
-}
-.pressing.down {
-  background-position: -425px -510px !important;
-}
-.playpause {
-  bottom: 0;
-  width: 170px;
-  height: 170px;
-}
-.playpause[data-playing="true"] {
-  background-image: url(../img/spritesheet.png);
-  background-position: 0px -1020px;
-  -webkit-background-size: 1020px 1020px;
-          background-size: 1020px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.pressing .playpause[data-playing="true"] {
-  background-position: -510px -1020px !important;
-}
-.pressing.playpause[data-playing="true"] {
-  background-position: -510px -1020px !important;
-}
-.playpause[data-playing="false"] {
-  background-image: url(../img/spritesheet.png);
-  background-position: -340px -850px;
-  -webkit-background-size: 1020px 1020px;
-          background-size: 1020px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.pressing .playpause[data-playing="false"] {
-  background-position: -850px -850px !important;
-}
-.pressing.playpause[data-playing="false"] {
-  background-position: -850px -850px !important;
+.widehanded .kp_5:before {
+  content: '';
+  position: absolute;
+  height: -webkit-calc(100% - 4px);
+  height: calc(100% - 4px);
+  width: -webkit-calc(100% - 4px);
+  width: calc(100% - 4px);
+  top: 2px;
+  left: 2px;
+  border: 1px #444444 solid;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=/www/assets/css//main.css.map */

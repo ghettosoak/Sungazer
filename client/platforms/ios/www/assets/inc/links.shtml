@@ -1,37 +1,37 @@
 <div class="links">
-	<a href="http://lickth.is">
-		<span class="icon-lick"></span>
-		lick
-	</a>
-	<a href="http://inter.ject.ch/#/time/User">
+	<a class="" href="http://inter.ject.ch/#/time/User">
 		<span class="icon-playpause"></span>
 		inter.ject
 	</a>
-	<a href="http://ab.ject.ch">
+	<a class="" href="http://ab.ject.ch">
 		<span class="icon-binoculars"></span>
 		ab.ject
 	</a>
-	<a href="https://docs.google.com/spreadsheets/u/0/">
+	<a class="" href="https://docs.google.com/spreadsheets/u/0/">
 		<span class="icon-gdrive"></span>
 		google docs
 	</a>
-	<a href="https://feedly.com/i/my">
-		<span class="icon-feedly"></span>
-		feedly
+	<a class="" href="https://www.youtube.com/">
+		<span class="icon-youtube"></span>
+		youtube
 	</a>
-	<a href="http://read.ject.ch/">
-		<span class="icon-pfuuse"></span>
-		pfuuse
+	<a class="" href="https://www.quora.com/">
+		<span class="icon-quora"></span>
+		quora
 	</a>
-	<a href="https://www.firebase.com/account/#/">
+	<a class="" href="http://stackexchange.com/">
+		<span class="icon-stackexchange"></span>
+		stack exchange
+	</a>
+	<a class="" href="https://www.firebase.com/account/#/">
 		<span class="icon-firebase"></span>
 		firebase
 	</a>
-	<a href="https://itunesconnect.apple.com">
+	<a class="" href="https://itunesconnect.apple.com">
 		<span class="icon-apple"></span>
 		itunes connect
 	</a>
-	<a href="https://fortawesome.github.io/Font-Awesome/cheatsheet/">
+	<a class="" href="https://fortawesome.github.io/Font-Awesome/cheatsheet/">
 		<span class="icon-flag"></span>
 		font awesome
 	</a>

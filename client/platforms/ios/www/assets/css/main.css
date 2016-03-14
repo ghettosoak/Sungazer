@@ -2199,6 +2199,103 @@ a:hover,
 a:active {
   text-decoration: none !important;
 }
+.block_link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+.block_link * {
+  color: white;
+}
+.block_link:hover,
+.block_link:active {
+  text-decoration: none;
+  background-color: white;
+}
+.block_link:hover *,
+.block_link:active * {
+  color: #e5e5e5;
+}
+.press,
+a {
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease, top 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+  -o-transition: background-color 0.2s ease, color 0.2s ease, top 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, top 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+.press *,
+a * {
+  -webkit-transition: background-color 0.2s ease, color 0.2s ease, top 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+  -o-transition: background-color 0.2s ease, color 0.2s ease, top 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, top 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
+}
+.pressing {
+  background-color: white !important;
+  color: #e5e5e5 !important;
+}
+.pressing * {
+  color: #e5e5e5 !important;
+}
+.pressing.flash {
+  color: white !important;
+}
+.flasher {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  background-color: white !important;
+  display: table;
+}
+.flasher p {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #e5e5e5 !important;
+}
+.pressing .flasher {
+  visibility: visible;
+  opacity: 1;
+  z-index: 2;
+}
+.searcher {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  position: relative;
+  margin: 0 10px 0 0;
+  top: 4px;
+  background-image: url(../img/spritesheet.png);
+  background-position: -25px 0px;
+  -webkit-background-size: 150px 150px;
+          background-size: 150px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .searcher,
+.pressing.searcher {
+  background-position: -100px 0px !important;
+}
+.movingAbout {
+  top: 0px;
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+}
+.entering {
+  top: 10px;
+  opacity: 0;
+  visibility: hidden;
+}
+.leaving {
+  top: 10px;
+  opacity: 0;
+  visibility: hidden;
+}
 .background {
   position: absolute;
   top: 0;
@@ -2226,6 +2323,20 @@ a:active {
   height: 100%;
   width: 100%;
   border: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.background iframe.active {
+  opacity: 1;
+  visibility: visible;
+}
+.first .background iframe {
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 .clock {
   position: absolute;
@@ -2243,6 +2354,14 @@ a:active {
   top: 50%;
   left: 50%;
   background-color: white;
+  -webkit-transition: all 0.05s ease;
+  -o-transition: all 0.05s ease;
+  transition: all 0.05s ease;
+}
+.pressing.clock .hours,
+.pressing.clock .minutes,
+.pressing.clock .seconds {
+  background-color: #e5e5e5 !important;
 }
 .clock .hours {
   height: 40px;
@@ -2296,6 +2415,9 @@ a:active {
       -ms-transform-origin: 0 105px;
        -o-transform-origin: 0 105px;
           transform-origin: 0 105px;
+}
+.pressing.clock .hashes span {
+  background-color: #e5e5e5;
 }
 .clock .hashes span:nth-child(1) {
   -webkit-transform: rotate(0deg);
@@ -2693,35 +2815,73 @@ a:active {
   width: 50%;
   position: relative;
   float: left;
-  font-size: 40px;
-  line-height: 40px;
   text-align: center;
   padding: 10px;
+  height: 100%;
 }
-.weather .city .brn {
-  border-right: 1px solid white;
+.weather .city .title {
+  font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 5px;
 }
 .weather .city .icon {
   font-family: wxFont;
+  font-size: 55px;
+  line-height: 65px;
 }
 .weather .city .temp {
-  position: relative;
+  position: absolute;
+  top: 110px;
+  margin: 0 auto;
+  font-size: 45px;
+  line-height: 45px;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
 }
-.weather .city .temp:after {
+.weather .city .temp .current,
+.weather .city .temp .hi-lo {
+  position: absolute;
+  left: 50%;
+  display: block;
+}
+.weather .city .temp .current {
+  margin: 0 0 0 -40px;
+}
+.weather .city .temp .current:after {
   content: '';
   position: absolute;
-  top: 10px;
-  height: 10px;
-  width: 10px;
-  border: 2px solid white;
+  top: 5px;
+  height: 7px;
+  width: 7px;
+  border: 1px solid white;
   border-radius: 10px;
 }
+.weather .city .temp .hi-lo {
+  font-size: 25px;
+  line-height: 15px;
+}
+.weather .city .temp .hi-lo:before,
+.weather .city .temp .hi-lo:after {
+  position: relative;
+  display: block;
+}
+.weather .city .temp .hi-lo:before {
+  content: attr(data-lo);
+  margin: 8px 29px -10px 0;
+}
+.weather .city .temp .hi-lo:after {
+  content: attr(data-hi);
+  margin: -7px 0 0 22px;
+}
 .weather .city .threeday {
+  position: absolute;
+  bottom: 0;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
+  left: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 20px;
-  line-height: 20px;
 }
 .weather .city .threeday li {
   width: 33.3333%;
@@ -2729,8 +2889,14 @@ a:active {
   float: left;
   margin: 0;
   padding: 0;
+  font-size: 20px !important;
+  line-height: 20px;
 }
-.weather .city .threeday .temp:after {
+.weather .city .threeday li .icon {
+  font-size: 20px;
+  line-height: 20px;
+}
+.weather .city .threeday li .threeday_temp:after {
   content: none;
 }
 .weather .icon[data-planetary="day"][data-weather="200"]:before,
@@ -2914,10 +3080,10 @@ a:active {
   bottom: 0;
   right: 0;
   width: 335px;
-  padding: 10px;
+  height: 322px;
 }
 .links a {
-  height: 100px;
+  height: 33.33333%;
   width: 33.33333%;
   color: white;
   position: relative;
@@ -2932,79 +3098,115 @@ a:active {
   width: 60px;
   height: 60px;
   display: block;
-  margin: 0 auto 10px;
+  margin: 10px auto 5px;
 }
-.links a .icon-lick {
+.icon-youtube {
   background-image: url(../img/spritesheet.png);
   background-position: -60px -120px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.links a .icon-playpause {
+.pressing .icon-youtube,
+.pressing.icon-youtube {
+  background-position: -240px -120px !important;
+}
+.icon-playpause {
   background-image: url(../img/spritesheet.png);
   background-position: 0px -60px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.links a .icon-binoculars {
+.pressing .icon-playpause,
+.pressing.icon-playpause {
+  background-position: -180px -60px !important;
+}
+.icon-binoculars {
   background-image: url(../img/spritesheet.png);
   background-position: -120px -240px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.links a .icon-gdrive {
+.pressing .icon-binoculars,
+.pressing.icon-binoculars {
+  background-position: -300px -240px !important;
+}
+.icon-gdrive {
   background-image: url(../img/spritesheet.png);
   background-position: 0px -180px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.links a .icon-feedly {
+.pressing .icon-gdrive,
+.pressing.icon-gdrive {
+  background-position: -180px -180px !important;
+}
+.icon-quora {
   background-image: url(../img/spritesheet.png);
   background-position: 0px -240px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.links a .icon-pfuuse {
+.pressing .icon-quora,
+.pressing.icon-quora {
+  background-position: -180px -240px !important;
+}
+.icon-stackexchange {
   background-image: url(../img/spritesheet.png);
   background-position: -60px -60px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.links a .icon-firebase {
+.pressing .icon-stackexchange,
+.pressing.icon-stackexchange {
+  background-position: -240px -60px !important;
+}
+.icon-firebase {
   background-image: url(../img/spritesheet.png);
   background-position: -120px -180px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.links a .icon-apple {
+.pressing .icon-firebase,
+.pressing.icon-firebase {
+  background-position: -300px -180px !important;
+}
+.icon-apple {
   background-image: url(../img/spritesheet.png);
   background-position: 0px 0px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
 }
-.links a .icon-flag {
+.pressing .icon-apple,
+.pressing.icon-apple {
+  background-position: -180px 0px !important;
+}
+.icon-flag {
   background-image: url(../img/spritesheet.png);
   background-position: -60px -180px;
-  -webkit-background-size: 180px 180px;
-          background-size: 180px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
   background-repeat: no-repeat;
   overflow: hidden;
+}
+.pressing .icon-flag,
+.pressing.icon-flag {
+  background-position: -240px -180px !important;
 }
 .news {
   position: absolute;
@@ -3012,56 +3214,89 @@ a:active {
   right: 0;
   width: 335px;
   height: 437px;
-  padding: 10px;
 }
 .news .source {
   position: relative;
-  margin-bottom: 5px;
-  padding-top: 40px;
+  width: 100%;
+  height: 50%;
+  float: left;
+  padding: 35px 0 10px 0;
   overflow: hidden;
+}
+.news .source:hover,
+.news .source:active {
+  text-decoration: none;
 }
 .news .source:before {
   content: '';
   height: 30px;
   width: 30px;
   position: absolute;
-  top: 0;
-  left: 0;
-}
-.news .source.nyt:before {
-  background-image: url(../img/spritesheet.png);
-  background-position: -60px -30px;
-  -webkit-background-size: 90px 90px;
-          background-size: 90px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.news .source.hackernews:before {
-  background-image: url(../img/spritesheet.png);
-  background-position: -60px -60px;
-  -webkit-background-size: 90px 90px;
-          background-size: 90px;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  top: 5px;
+  left: 10px;
 }
 .news .source a {
   font-size: 25px;
   line-height: 25px;
   color: white;
   width: 100%;
-  max-height: 52px;
+  max-height: 58px;
   overflow: hidden;
   position: relative;
   float: left;
-  padding-bottom: 5px;
-  border-bottom: 1px white solid;
-  margin-bottom: 5px;
+  padding: 5px 10px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.news .source a:last-child {
-  border: 0;
+.news .source a:before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
+  bottom: 0px;
+  left: 10px;
+  background-color: white;
+}
+.news .source a:last-child:not(:empty):before {
+  content: none;
+}
+.google:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: 0px -60px;
+  -webkit-background-size: 180px 180px;
+          background-size: 180px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .google:before,
+.pressing.google:before {
+  background-position: -90px -60px !important;
+}
+.nyt:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -60px -30px;
+  -webkit-background-size: 180px 180px;
+          background-size: 180px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .nyt:before,
+.pressing.nyt:before {
+  background-position: -150px -30px !important;
+}
+.hackernews:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -60px -60px;
+  -webkit-background-size: 180px 180px;
+          background-size: 180px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .hackernews:before,
+.pressing.hackernews:before {
+  background-position: -150px -60px !important;
 }
 .stats {
   position: absolute;
@@ -3084,6 +3319,8 @@ a:active {
   border: 1px solid white;
   border-radius: 80px;
   overflow: hidden;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 .stats .stat .pie svg {
   height: 100%;
@@ -3098,13 +3335,31 @@ a:active {
   display: block;
   width: 100%;
   margin: 0;
+  color: white;
 }
 .stats .uptime {
   position: absolute;
+  color: white;
   text-align: center;
-  bottom: 5px;
+  top: 481px;
   width: 100%;
   margin: 0;
+}
+.digitalocean_link {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: auto;
+  background-image: url(../img/spritesheet.png);
+  background-position: -60px -240px;
+  -webkit-background-size: 360px 360px;
+          background-size: 360px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .digitalocean_link,
+.pressing.digitalocean_link {
+  background-position: -240px -240px !important;
 }
 .quote {
   position: absolute;
@@ -3113,182 +3368,251 @@ a:active {
   width: 375px;
   height: 251px;
   overflow: scroll;
+}
+.quote .quote_interior {
+  width: 100%;
+  height: 100%;
+  position: relative;
   padding: 10px;
 }
-.quote a {
-  color: white;
-}
-.quote a p {
+.quote p {
   font-size: 50px;
   line-height: 40px;
 }
-.smallish.quote a p {
+.smallish.quote p {
   font-size: 25px;
   line-height: 25px;
 }
-.calendar {
-  width: 300px;
-  height: 250px;
+/*@import "modules/calendar.less";*/
+/*@import "modules/shortcuts.less";*/
+.control {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 250px;
+  height: 259px;
+  margin-left: -208px;
+  padding: 20px;
+}
+.control .songtitle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 30px;
+  line-height: 30px;
+  color: white;
+  width: 100%;
+  height: 105px;
+  overflow: hidden;
+  padding: 25px 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.control div {
+  position: absolute;
+  border-radius: 50%;
+}
+.control div:before {
+  content: '';
   position: absolute;
   top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.control .shareMouse,
+.control .dimScreens,
+.control .mute,
+.control .next {
+  height: 69px;
+  width: 69px;
+}
+.control .shareMouse:before,
+.control .dimScreens:before,
+.control .mute:before,
+.control .next:before {
+  height: 80px;
+  width: 80px;
+  margin: -40px 0 0 -40px;
+}
+.control .shareMouse {
+  bottom: 85px;
+  right: 10px;
+}
+.control .dimScreens {
+  bottom: 85px;
+  left: 10px;
+}
+.control .mute {
+  bottom: 10px;
+  left: 10px;
+}
+.control .next {
+  bottom: 10px;
+  right: 10px;
+}
+.control .playpause {
+  height: 90px;
+  width: 90px;
+  bottom: 35px;
+  left: 80px;
+}
+.control .playpause:before {
+  height: 101px;
+  width: 101px;
+  margin: -50.5px 0 0 -50.5px;
+}
+.control .mute:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -80px -480px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .mute:before,
+.pressing.control .mute:before {
+  background-position: -320px -480px !important;
+}
+.control .mute.active:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -320px -480px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .mute.active:before,
+.pressing.control .mute.active:before {
+  background-position: -560px -480px !important;
+}
+.control .playpause:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -303px -606px;
+  -webkit-background-size: 606px 606px;
+          background-size: 606px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .playpause:before,
+.pressing.control .playpause:before {
+  background-position: -606px -606px !important;
+}
+.control .playpause.active:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: 0px -606px;
+  -webkit-background-size: 606px 606px;
+          background-size: 606px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .playpause.active:before,
+.pressing.control .playpause.active:before {
+  background-position: -303px -606px !important;
+}
+.control .openMusic:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -80px -560px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .openMusic:before,
+.pressing.control .openMusic:before {
+  background-position: -320px -560px !important;
+}
+.control .next:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -160px -560px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .next:before,
+.pressing.control .next:before {
+  background-position: -400px -560px !important;
+}
+.control .dimScreens:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: -160px -480px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .dimScreens:before,
+.pressing.control .dimScreens:before {
+  background-position: -400px -480px !important;
+}
+.control .shareMouse:before {
+  background-image: url(../img/spritesheet.png);
+  background-position: 0px -560px;
+  -webkit-background-size: 480px 480px;
+          background-size: 480px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.pressing .control .shareMouse:before,
+.pressing.control .shareMouse:before {
+  background-position: -240px -560px !important;
+}
+.widehanded {
+  width: 300px;
+  height: 508px;
+  position: absolute;
+  bottom: 0;
   left: 0;
-  margin-top: -129px;
   padding: 10px;
 }
-.calendar .clndr-control-button {
-  display: none;
-}
-.calendar .month {
-  text-align: center;
-  font-size: 25px;
-}
-.calendar table {
-  width: 100%;
-  font-size: 20px;
-  line-height: 30px;
-}
-.calendar table .header-days {
-  border-bottom: 1px solid white;
-}
-.calendar table .header-days .header-day {
-  text-align: center;
-}
-.calendar table .adjacent-month {
-  opacity: .5;
-}
-.calendar table .day {
-  text-align: center;
-}
-.calendar table .day .day-contents {
-  width: 30px;
-  margin: 0 auto;
-  position: relative;
-}
-.calendar table .today .day-contents {
-  background-color: white;
-  border-radius: 50px;
-  color: white;
-  -webkit-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-}
-.ready .calendar table .today .day-contents {
-  color: #1f2562;
-}
-.shortcuts {
-  position: absolute;
-  width: 380px;
-  height: 259px;
-  bottom: 0;
-  left: 0;
-  font-size: 25px;
-  padding: 15px 10px 10px;
-}
-.shortcuts ul {
-  margin: 5px 0 0;
-  padding: 0;
-}
-.shortcuts ul li {
-  list-style: none;
-  overflow: hidden;
-  padding-bottom: 5px;
-}
-.shortcuts p {
-  margin: 5px 0 0;
-  position: relative;
-  float: left;
-  width: 100%;
-}
-.shortcuts p span {
-  float: right;
-  position: relative;
-}
-.shortcuts p span.directed {
-  top: -8px;
-}
-.shortcuts i {
-  font-style: normal;
-  padding: 3px;
-  border: 1px solid white;
+.widehanded .key,
+.widehanded .bigkey {
   border-radius: 5px;
-}
-.shortcuts i.direction {
-  width: 27px;
-  display: inline-block;
-  height: 26px;
+  width: 59px;
   position: relative;
-  bottom: -5px;
+  margin: 5px;
+  display: table;
+  background-color: white;
+  color: #444444;
 }
-.shortcuts i.direction_all {
-  background-image: url(../img/spritesheet.png);
-  background-position: 0px -125px;
-  -webkit-background-size: 75px 75px;
-          background-size: 75px;
-  background-repeat: no-repeat;
+.widehanded .key span,
+.widehanded .bigkey span {
+  width: 100%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 20px;
+}
+.widehanded .row {
+  width: 100%;
+  position: relative;
   overflow: hidden;
+  float: left;
+  margin: 0;
 }
-.shortcuts i.direction_updown {
-  background-image: url(../img/spritesheet.png);
-  background-position: -25px -125px;
-  -webkit-background-size: 75px 75px;
-          background-size: 75px;
-  background-repeat: no-repeat;
-  overflow: hidden;
+.widehanded .key {
+  height: 87px;
+  float: left;
 }
-.music {
+.widehanded .bigkey {
+  height: 184px;
+  float: right;
+  margin-right: 7px;
+}
+.widehanded .kp_5:before {
+  content: '';
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 170px;
-  height: 259px;
-  margin-left: -128px;
-}
-.music div {
-  position: absolute;
-}
-.music .up,
-.music .down {
-  width: 85px;
-  height: 94px;
-  top: 0;
-}
-.music .up {
-  background-image: url(../img/spritesheet.png);
-  background-position: -85px -510px;
-  -webkit-background-size: 255px 255px;
-          background-size: 255px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.music .down {
-  left: 50%;
-  background-image: url(../img/spritesheet.png);
-  background-position: -170px -510px;
-  -webkit-background-size: 255px 255px;
-          background-size: 255px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.music .playpause {
-  bottom: 0;
-  width: 170px;
-  height: 170px;
-}
-.music .playpause[data-playing="true"] {
-  background-image: url(../img/spritesheet.png);
-  background-position: 0px -1020px;
-  -webkit-background-size: 510px 510px;
-          background-size: 510px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-.music .playpause[data-playing="false"] {
-  background-image: url(../img/spritesheet.png);
-  background-position: -340px -850px;
-  -webkit-background-size: 510px 510px;
-          background-size: 510px;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  height: -webkit-calc(100% - 4px);
+  height: calc(100% - 4px);
+  width: -webkit-calc(100% - 4px);
+  width: calc(100% - 4px);
+  top: 2px;
+  left: 2px;
+  border: 1px #444444 solid;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=/www/assets/css//main.css.map */
