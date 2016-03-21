@@ -1,10 +1,11 @@
-var itunes = require('playback'),
-	loudness = require('loudness'),
+// var itunes = require('playback'),
+var loudness = require('loudness'),
 	Firebase = require('firebase'),
 	firebaseRef = new Firebase('https://sungazer.firebaseIO.com/'),
+	exec = require('child_process').exec,
 
-	volumeFirst = true,
-	itunesFirst = true;
+	volumeFirst = true;
+	// itunesFirst = true;
 
 firebaseRef.child('mute').on('value', function(data){
 	if (!volumeFirst){
@@ -16,19 +17,19 @@ firebaseRef.child('mute').on('value', function(data){
 	volumeFirst = false;
 });
 
-firebaseRef.child('playing').on('value', function(data){
-	if (!itunesFirst){
-		if (data.A.B){
-			itunes.play()
-			console.log('PLAY')
-		}
-		else{
-			itunes.pause()
-			console.log('PAUSE')
-		}
-	}
-	itunesFirst = false;
-});
+// firebaseRef.child('playing').on('value', function(data){
+// 	if (!itunesFirst){
+// 		if (data.A.B){
+// 			itunes.play()
+// 			console.log('PLAY')
+// 		}
+// 		else{
+// 			itunes.pause()
+// 			console.log('PAUSE')
+// 		}
+// 	}
+// 	itunesFirst = false;
+// });
 
 firebaseRef.child('shareMouse').on('value', function(data){
 	if (data.A.B){
@@ -41,22 +42,26 @@ firebaseRef.child('shareMouse').on('value', function(data){
 });
 
 firebaseRef.child('dimScreens').on('value', function(data){
-	if (data.A.B)
+	console.log(data.A.B)
+	if (data.A.B){
 		exec( '/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine' );
+	}
 });
 
-firebaseRef.child('musicNext').on('value', function(data){
+console.log('yeah!')
 
-});
+// firebaseRef.child('musicNext').on('value', function(data){
 
-itunes.on('playing', function(data){
-	firebaseRef.update({ playing: true });
-});
+// });
+
+// itunes.on('playing', function(data){
+// 	firebaseRef.update({ playing: true });
+// });
 
 
-itunes.on('paused', function(data){
-	firebaseRef.update({ playing: false });
-});
+// itunes.on('paused', function(data){
+// 	firebaseRef.update({ playing: false });
+// });
 
 
 

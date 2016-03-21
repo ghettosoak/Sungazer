@@ -214,6 +214,14 @@ module.exports = [
             "cordova"
         ],
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-brightness/www/brightness.js",
+        "id": "cordova-plugin-brightness.Brightness",
+        "pluginId": "cordova-plugin-brightness",
+        "clobbers": [
+            "cordova.plugins.brightness"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -224,7 +232,8 @@ module.exports.metadata =
     "cordova-plugin-media": "1.0.1",
     "cordova-plugin-preventsleep": "1.1.1",
     "nl.x-services.plugins.insomnia": "4.0.1",
-    "cordova-plugin-file": "3.0.0"
+    "cordova-plugin-file": "3.0.0",
+    "cordova-plugin-brightness": "0.1.5"
 }
 // BOTTOM OF METADATA
 });

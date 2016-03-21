@@ -13,10 +13,10 @@ $(function($){
 			title: incomingTitle
 		});
 
-		if (index === (newsCount - 1)) processToList(target);
+		if (index === (newsCount - 1)) processToList(target, newsCount);
 	},
 
-	processToList = function(target){
+	processToList = function(target, count){
 
 		var googleTransition = window.transitionTime;
 
@@ -24,6 +24,8 @@ $(function($){
 
 			if (typeof _List[target][e] === 'object'){
 				var $that = $(this);
+
+				$that.parent().attr('data-count', count)	
 
 				setTimeout(function(){
 					$that.addClass('leaving');
@@ -43,9 +45,6 @@ $(function($){
 
 				googleTransition += window.transitionTime;
 			}
-			// else if ($.isEmptyObject(_List[target][e])){
-			// 	$that.parent().addClass('')
-			// }
 		});
 	},
 
@@ -92,6 +91,7 @@ $(function($){
 
 	HN_getList = function(){
 
+
 		$.ajax({
 			url: 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty',
 		}).done(function(data) {
@@ -108,6 +108,7 @@ $(function($){
 		$.ajax({
 			url: 'https://hacker-news.firebaseio.com/v0/item/' + ID + '.json?print=pretty',
 		}).done(function(data) {
+
 			organizeToList(
 				'hackernews', 
 				data.url,

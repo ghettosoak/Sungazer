@@ -39,9 +39,12 @@ document.addEventListener("touchstart", function() {},false);
 
 function deviceReady(){
 	App.initialize();
+	brightness.setKeepScreenOn(true);
 	console.log(Media);
 	screen.lockOrientation('landscape');
 	window.isApp = true;
+
+	// var VolumeControl = cordova.plugins.brightness;
 }
 
 window.fix = function()

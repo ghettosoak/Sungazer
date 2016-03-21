@@ -5,16 +5,15 @@
 	bottom: 0;
 	left: 0;
 	// overflow: hidden;
-	padding: 10px;
+	padding: 5px;
 
-	@keywidth: 59px;
-	@keyheight: 87px;
+	@keywidth: 62px;
+	@keyheight: 89px;
 
 	.key, .bigkey{
 		border-radius: 5px;
 		width: @keywidth;
 		position: relative;
-		margin: 5px;
 		display: table;
 		background-color: white;
 		color: @color-focus;
@@ -39,12 +38,17 @@
 	.key{
 		height: @keyheight;
 		float: left;
+		margin: 5px;
+
+		&:last-of-type{
+			margin: 5px 0 0 5px !important;
+		}
 	}
 
 	.bigkey{
 		height: (@keyheight * 2) + 10;
 		float: right;
-		margin-right: 7px;
+		margin: 5px 5px 0 5px;
 	}
 
 	.kp_5:before{

@@ -27,6 +27,10 @@
                         {
                             "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Brightness\"><param name=\"ios-package\" value=\"Brightness\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -50,6 +54,9 @@
             "PACKAGE_NAME": "com.meltcreative.sungazer"
         },
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.meltcreative.sungazer"
+        },
+        "cordova-plugin-brightness": {
             "PACKAGE_NAME": "com.meltcreative.sungazer"
         }
     },
@@ -269,6 +276,14 @@
                 "cordova"
             ],
             "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-brightness/www/brightness.js",
+            "id": "cordova-plugin-brightness.Brightness",
+            "pluginId": "cordova-plugin-brightness",
+            "clobbers": [
+                "cordova.plugins.brightness"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -277,6 +292,7 @@
         "cordova-plugin-media": "1.0.1",
         "cordova-plugin-preventsleep": "1.1.1",
         "nl.x-services.plugins.insomnia": "4.0.1",
-        "cordova-plugin-file": "3.0.0"
+        "cordova-plugin-file": "3.0.0",
+        "cordova-plugin-brightness": "0.1.5"
     }
 }

@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -46,6 +45,8 @@
 		B5055B0114EE4DCB89794183 /* Insomnia.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B7E2867B7415F92F0B4EF /* Insomnia.m */; };
 		B6A75333748D4230828195DD /* CDVLocalFilesystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 000A63A0D12E4E88AB6C8B7A /* CDVLocalFilesystem.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		79CC17950C03454B8172E5C7 /* Brightness.m in Sources */ = {isa = PBXBuildFile; fileRef = D24DC770167940DCA158AF88 /* Brightness.m */; };
+		82CA851BC15041868FC52FF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E16255A2AD4829847516F4 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,9 @@
 		F05BD038D6B54C8CA1C33DD9 /* CDVLocalFilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLocalFilesystem.h; path = "cordova-plugin-file/CDVLocalFilesystem.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Sungazer/config.xml; sourceTree = "<group>"; };
 		F8B1EE892FFA4DB781C2933B /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVAssetLibraryFilesystem.m; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; };
+		D24DC770167940DCA158AF88 /* Brightness.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "Brightness.m"; path = "cordova-plugin-brightness/Brightness.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		10E814D04EE24655986A6DB9 /* Brightness.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Brightness.h"; path = "cordova-plugin-brightness/Brightness.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		45E16255A2AD4829847516F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				82CA851BC15041868FC52FF5 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +209,7 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				45E16255A2AD4829847516F4 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,6 +237,8 @@
 				C65D51B3758D4ED2A0308F7A /* CDVFile.h */,
 				F05BD038D6B54C8CA1C33DD9 /* CDVLocalFilesystem.h */,
 				0770466571074CE8B54F2A9F /* CDVAssetLibraryFilesystem.h */,
+				D24DC770167940DCA158AF88 /* Brightness.m */,
+				10E814D04EE24655986A6DB9 /* Brightness.h */,
 			);
 			name = Plugins;
 			path = Sungazer/Plugins;
@@ -312,7 +320,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 720;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = HD29J2YG92;
@@ -426,6 +434,7 @@
 				50FE4FC52DF4472EB135B3F4 /* CDVFile.m in Sources */,
 				B6A75333748D4230828195DD /* CDVLocalFilesystem.m in Sources */,
 				66591559AFF6445EA4CC602E /* CDVAssetLibraryFilesystem.m in Sources */,
+				79CC17950C03454B8172E5C7 /* Brightness.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,25 +14,42 @@ $(function($){
 						.addClass('entering')
 						.attr('data-href', 'https://www.google.com/search?q=' + data.author)
 						.removeClass('smallish')
+						.empty()
 						.html(
 							'<p>' + data.quote + '</p>'+
-							'<span>— ' + data.author + '</span>'+
+							// '<p>For me, design is like choosing what I\'m going to wear for the day - only much more complicated and not really the same at all.  </p>'+
+							'<span>— ' + data.author + '</span>'+ 
 							'<div class="flasher">'+
 								'<p><span class="searcher"></span>' + data.author + '</p>'+
 							'</div>'
 						);
 
 						setTimeout(function(){
-							if ($('.quote').find('p').outerHeight(true) > $quote.height())
-								$quote.addClass('smallish')
-							else
-								$quote.removeClass('smallish')
+							$quoteInterior.removeClass('entering');
 
 							setTimeout(function(){
-								$quoteInterior.removeClass('entering');
+								console.log(
+									$('.quote').find('p').outerHeight(true) + $('.quote').find('span').outerHeight(true),
+									229,
+									(
+										$('.quote').find('p').outerHeight(true) + 
+										$('.quote').find('span').outerHeight(true)
+									) > 229
+								)
+								if (
+									(
+										$('.quote').find('p').outerHeight(true) + 
+										$('.quote').find('span').outerHeight(true)
+									) > 229
+								){
+									$quote.addClass('smallish')
+								}
+								else{
+									$quote.removeClass('smallish')
+								}
 
-							}, window.transitionTime * 3);
-						}, window.transitionTime * 2)
+							}, window.transitionTime * 5);
+						}, window.transitionTime)
 
 				}, window.transitionTime);
 

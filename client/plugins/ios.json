@@ -64,6 +64,9 @@
         },
         "nl.x-services.plugins.insomnia": {
             "PACKAGE_NAME": "com.meltcreative.sungazer"
+        },
+        "cordova-plugin-brightness": {
+            "PACKAGE_NAME": "com.meltcreative.sungazer"
         }
     },
     "dependent_plugins": {
